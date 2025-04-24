@@ -63,7 +63,7 @@ params:
             - name: Talks
               url: talks/
             - name: Teaching
-              url: classes/
+              url: teaching/
             - name: Resume
               url: cv.pdf
             # - name: Archive
