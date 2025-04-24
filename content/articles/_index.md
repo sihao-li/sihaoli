@@ -6,21 +6,18 @@ hidemeta: true
 
 ### --------------- Master thesis
 
-<span style="color: #008080">
-  Innovation under Interoperability: An Analysis of Asymmetric Ad-Financed Platforms
-</span><br>
-&emsp; Supervised by Marc Bourreau<br>
+> <span style="color: #008080; font-size: 1.4em;">
+>   Innovation under Interoperability:
+>   An Analysis of Asymmetric Ad-Financed Platforms
+> </span><br>
+> &emsp; Supervised by Marc Bourreau
 
-<details
-  style="
-    border-left: 4px solid #ccc;
-    padding-left: 1em;
-    margin: 1em 0;
-  "
->
+
+<details>
   <summary><strong>Abstract</strong> &middot; Ungated</summary>
-  <div style="text-align: justify; line-height: 1.2; margin-top: .5em;">
-    This exercise proposes a theoretical model inspired by and extending the recent approach of Bourreau et al. (2023), to analyze the effect of interoperability on innovation incentives in an asymmetric market of advertising-funded digital platforms (such as WhatsApp vs. Signal). Within a classic Hotelling framework with endogenous multi-homing, we explicitly incorporate strategic innovation choices in the presence of technological spillovers, allowing the dominant platform to copy the innovations developed by the minority platform. Our results show that the introduction or increase of interoperability reduces users' propensity to multi-home, thereby incentivizing the minority platform to intensify its investment in innovation to preserve its vertical differentiation. Conversely, the spillover discourages autonomous innovation by the leader. These theoretical results highlight the necessity of fine-tuned regulation of interoperability levels and the protection of innovations to effectively promote innovation dynamics.  </div>
+  <div style="text-align: justify; line-height: 1.2; margin-top: 0.5em;">
+    This exercise proposes a theoretical model inspired by and extending the recent approach of Bourreau et al. (2023), to analyze the effect of interoperability on innovation incentives in an asymmetric market of advertising-funded digital platforms (such as WhatsApp vs. Signal). Within a classic Hotelling framework with endogenous multi-homing, we explicitly incorporate strategic innovation choices in the presence of technological spillovers, allowing the dominant platform to copy the innovations developed by the minority platform. Our results show that the introduction or increase of interoperability reduces users' propensity to multi-home, thereby incentivizing the minority platform to intensify its investment in innovation to preserve its vertical differentiation. Conversely, the spillover discourages autonomous innovation by the leader. These theoretical results highlight the necessity of fine-tuned regulation of interoperability levels and the protection of innovations to effectively promote innovation dynamics.
+  </div>
 </details>
 
 
