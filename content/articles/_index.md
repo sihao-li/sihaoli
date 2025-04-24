@@ -6,28 +6,23 @@ hidemeta: true
 
 ### --------------- Master thesis
 
-> <span style="color: #008080">
+> <span style="color: #008080; font-size: 1.4em;">
 >   Innovation under Interoperability:
 >   An Analysis of Asymmetric Ad-Financed Platforms
 > </span><br>
 > &emsp; Supervised by Marc Bourreau
+
+
 <details>
-  <summary><strong>Abstract</strong>
-  <div style="text-align: justify; line-height: 1.2; margin-top: 0.5em;">
-    This exercise proposes a theoretical model inspired by and extending the recent approach of Bourreau et al. (2023), to analyze the effect of interoperability on innovation incentives in an asymmetric market of advertising-funded digital platforms (such as WhatsApp vs. Signal). Within a classic Hotelling framework with endogenous multi-homing, we explicitly incorporate strategic innovation choices in the presence of technological spillovers, allowing the dominant platform to copy the innovations developed by the minority platform. Our results show that the introduction or increase of interoperability reduces users' propensity to multi-home, thereby incentivizing the minority platform to intensify its investment in innovation to preserve its vertical differentiation. Conversely, the spillover discourages autonomous innovation by the leader. These theoretical results highlight the necessity of fine-tuned regulation of interoperability levels and the protection of innovations to effectively promote innovation dynamics.
-  </div>
+  <summary><strong>Abstract</strong> &middot;
+  <div style="text-align: justify; line-height: 1.2; margin-top: .5em;">
+    This exercise proposes a theoretical model inspired by and extending the recent approach of Bourreau et al. (2023), to analyze the effect of interoperability on innovation incentives in an asymmetric market of advertising-funded digital platforms (such as WhatsApp vs. Signal). Within a classic Hotelling framework with endogenous multi-homing, we explicitly incorporate strategic innovation choices in the presence of technological spillovers, allowing the dominant platform to copy the innovations developed by the minority platform. Our results show that the introduction or increase of interoperability reduces users' propensity to multi-home, thereby incentivizing the minority platform to intensify its investment in innovation to preserve its vertical differentiation. Conversely, the spillover discourages autonomous innovation by the leader. These theoretical results highlight the necessity of fine-tuned regulation of interoperability levels and the protection of innovations to effectively promote innovation dynamics.  </div>
 </details>
 
 
 
 > <span style="color: #008080">Network externalities, Compatibility, and R\&D : A Literature Review</span><br>
 &emsp; Supervised by Marc Bourreau<br>
-<details>
-  <summary><strong>Abstract</strong>
-  <div style="text-align: justify; line-height: 1.2; margin-top: 0.5em;">
-    This literature review aims to provide a synthesis of key themes in Industrial Organization, with a particular focus on markets characterized by network externalities. First, it explores the relationship between competition and innovation before examining the issue of compatibility and its implications, notably in the context of the Digital Markets Act.
-  </div>
-</details>
 
 > <span style="color: #008080">Phd Project - Essays on Economics : Innovation and Technological Novelty</span><br>
 &emsp; Supervised by Anne Plunket & Felipe Starosta de Waldemar<br>
@@ -41,17 +36,10 @@ Submit at *Venture Capital*, 2025<br>
 > <span style="color: #008080">[What are economists telling us in the top 5 ? A Structural Topic Models approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043)</span><br>
 Si Hao Li<br>
 Submit at *Bulletin of Economic Research*, 2025<br>
-<details>
-  <summary><strong>Abstract</strong>
-  <div style="text-align: justify; line-height: 1.2; margin-top: 0.5em;">
-    This article examines the evolution of research topics published in top five economics journals using advanced textual analysis methods. We implemented Structural Topic Model (Roberts et al., 2014) on our database of articles from the top five journals, which we constructed using web scraping techniques from the RePEc platform. Our findings indicate that economics has evolved, with an increasing resurgence of empirical methods and a significant decline in theory, particularly in general equilibrium.
-  </div>
-</details>
 
 > <span style="color: #008080">[L'esportisation : un processus socio-économique de l'industrie vidéoludique](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4863578)</span><br>
 Si Hao LI<br>
 Resubmit at *Revue Française de socio-économie*, 2025<br>
-
 
 ### --------------- Other Publications
 
