@@ -2,6 +2,7 @@
 title: "Publications"
 description: "Articles and preprints."
 ---
+
 ### --------------- Master thesis
 
 > <span style="color: #008080">Innovation under Interoperability: An Analysis of Asymmetric Ad-Financed Platforms</span><br>
@@ -9,6 +10,9 @@ description: "Articles and preprints."
 
 > <span style="color: #008080">Network externalities, Compatibility, and R\&D : A Literature Review</span><br>
 &emsp; Supervised by Marc Bourreau<br>
+
+> <span style="color: #008080">Phd Project - Essays on Economics : Innovation and Technological Novelty</span><br>
+&emsp; Supervised by Anne Plunket & Felipe Starosta de Waldemar<br>
 
 ### --------------- Working Paper
 
