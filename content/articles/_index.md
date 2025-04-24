@@ -2,6 +2,13 @@
 title: "Publications"
 description: "Articles and preprints."
 ---
+### --------------- Master thesis
+
+> <span style="color: #008080">Innovation under Interoperability: An Analysis of Asymmetric Ad-Financed Platforms</span><br>
+&emsp; Supervised by Marc Bourreau<br>
+
+> <span style="color: #008080">Network externalities, Compatibility, and R\&D : A Literature Review</span><br>
+&emsp; Supervised by Marc Bourreau<br>
 
 ### --------------- Working Paper
 
@@ -30,11 +37,3 @@ Antonin Chenard and Si Hao Li<br>
 > <span style="color: #008080">[Des innovations financières aux conséquences néfastes?](https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-1-page-111?tab=premieres-lignes)</span><br>
 Jérôme Héricourt, Samuel Ligonnière, Si Hao Li, Olivier Pernet-Coudrier<br>
 *Regards croisés sur l'économie*, 2024<br>
-
-### --------------- Master thesis
-
-> <span style="color: #008080">Innovation under Interoperability: An Analysis of Asymmetric Ad-Financed Platforms</span><br>
-&emsp; Supervised by Marc Bourreau<br>
-
-> <span style="color: #008080">Network externalities, Compatibility, and R\&D : A Literature Review</span><br>
-&emsp; Supervised by Marc Bourreau<br>
