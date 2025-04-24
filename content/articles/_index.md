@@ -5,7 +5,7 @@ description: "Articles and preprints."
 
 ### --------------- Working Paper
 
-> <span style="color: #008080">[From angel investors to venture capital: fundraising pathways in professional esports teams]</span><br>
+> <span style="color: #008080">From angel investors to venture capital: fundraising pathways in professional esports teams</span><br>
 Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li<br>
 Submit at *Venture Capital*, 2025<br>
 
@@ -21,10 +21,10 @@ Resubmit at *Revue Française de socio-économie*, 2025<br>
 
 > <span style="color: #008080">[Enriching Agent-Based Modeling with LLM-Driven MBTI Personalities
 ](https://github.com/sihao-li/Agent-Based-LLM-MBTI/blob/main/OASN_LiCarnapete_ABM.pdf)</span><br>
-Si Hao Li, 2025<br>
+Si Hao Li and Olivia Carnapete, 2025<br>
 
 > <span style="color: #008080">[Les clubs amateurs face aux défis du financement: entre inégalités économiques et place croissante du privé](https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-2-page-117)</span><br>
-Antonin Chenard  et Si Hao Li<br>
+Antonin Chenard and Si Hao Li<br>
 *Regards croisés sur l'économie*, 2024<br>
 
 > <span style="color: #008080">[Des innovations financières aux conséquences néfastes?](https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-1-page-111?tab=premieres-lignes)</span><br>
@@ -33,6 +33,8 @@ Jérôme Héricourt, Samuel Ligonnière, Si Hao Li, Olivier Pernet-Coudrier<br>
 
 ### --------------- Master thesis
 
-> <span style="color: #008080">[Innovation under Interoperability: An Analysis of Asymmetric Ad-Financed Platforms]</span><br>
-&emsp; Supervised by Marc Bourreau,<br>
+> <span style="color: #008080">Innovation under Interoperability: An Analysis of Asymmetric Ad-Financed Platforms</span><br>
+&emsp; Supervised by Marc Bourreau<br>
 
+> <span style="color: #008080">Network externalities, Compatibility, and R\&D : A Literature Review</span><br>
+&emsp; Supervised by Marc Bourreau<br>
