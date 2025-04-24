@@ -108,7 +108,7 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Dylan Laplace Mermoud"
+      text: "Si Hao Li"
       icon: logo2.ico
       iconHeight: 18
 
