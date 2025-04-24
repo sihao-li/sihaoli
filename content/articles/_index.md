@@ -6,13 +6,11 @@ hidemeta: true
 
 ### --------------- Master thesis
 
-> <span style="color: #008080; font-size: 1.4em;">
+> <span style="color: #008080">
 >   Innovation under Interoperability:
 >   An Analysis of Asymmetric Ad-Financed Platforms
 > </span><br>
 > &emsp; Supervised by Marc Bourreau
-
-
 <details>
   <summary><strong>Abstract</strong> &middot; Ungated</summary>
   <div style="text-align: justify; line-height: 1.2; margin-top: 0.5em;">
