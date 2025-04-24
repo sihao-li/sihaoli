@@ -1,5 +1,5 @@
-baseURL: "https://dylanlaplacemermoud.github.io" 
-title: Dylan Laplace Mermoud
+baseURL: "https://sihao-li.github.io" 
+title: Si Hao Li
 paginate: 20
 theme: PaperMod
 
@@ -27,8 +27,8 @@ menu:
         #   weight: 4
 
 params:
-    description: "I am a postdoctoral researcher in quantum algorithms at ENSTA - Institut Polytechnique de Paris."
-    author: Dylan Laplace Mermoud
+    description: "I am a research assistant in economics at RITM (Université Paris Saclay)"
+    author: Si Hao Li
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "02 Jan 2006"
     defaultTheme: light
@@ -51,12 +51,12 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Dylan Laplace Mermoud
-          subtitle: "I am a postdoctoral researcher in quantum algorithms at the mathematics department of ENSTA from the Institut Polytechnique de Paris. I am also affiliated with the combinatorial optimization team in the CEDRIC lab at the Conservatoire National des Arts et Métiers. I am supervised by Andrea Simonetto, and co-supervised by Sourour Elloumi. Besides quantum algorithms, my research focuses on cooperative game theory and algebraic combinatorics."
-          imageUrl: "photo.png"
+          title: Si Hao Li
+          subtitle: "I am a Research Assistant at RITM, Université Paris-Saclay, currently seeking PhD funding opportunities. I am enrolled at ENS Paris-Saclay and in the Master’s program Network Industries and the Digital Economy jointly offered by Université Paris-Dauphine, Université Paris-Saclay, and Télécom Paris. My research interests lie at the intersection of Industrial Organization, Digital Economics, the Economics of Innovation, and Cultural Economics."
+          imageUrl: "photo2.jpg"
           imageWidth: 160
           imageHeight: 160
-          imageTitle: Dylan Laplace Mermoud
+          imageTitle: Si Hao Li
           buttons:
             - name: Publications
               url: articles/
@@ -73,8 +73,8 @@ params:
         #   url: https://hal.science/search/index/?q=*&authIdPerson_i=1215683
         # - name: arXiv
         #   url: https://arxiv.org/search/?query=Dylan+Laplace+Mermoud&searchtype=all&source=header
-        - name: orcid
-          url: https://orcid.org/0000-0002-1508-9656
+        # - name: orcid
+        #  url: https://orcid.org/0000-0002-1508-9656
         # - name: CV
         #   url: cv.pdf
         # - name: Location
@@ -82,19 +82,19 @@ params:
         # - name: Office Hours
         #   url: officehours/
         - name: Google Scholar
-          url: https://scholar.google.com/citations?user=haznRHoAAAAJ&hl=fr&oi=ao
+          url: https://scholar.google.com/citations?user=q-OuuE4AAAAJ&hl=fr
         # - name: YouTube
         #   url: https://www.youtube.com/@pmichaillat
-        - name: GitLab
-          url: https://gitlab.com/DylanLaplaceMermoud
+        # - name: GitLab
+        #  url: https://gitlab.com/DylanLaplaceMermoud
         - name: GitHub
-          url: https://github.com/DylanLaplaceMermoud
+          url: https://github.com/sihao-li
         # - name: Substack
         #   url: https://pmichaillat.substack.com
-        # - name: Twitter
-        #   url: https://twitter.com/pmichaillat
+        - name: Twitter
+          url: https://x.com/SihaoLS
         - name: Email
-          url: mailto:dylan.laplace.mermoud@gmail.com
+          url: si.li@ens-paris-saclay.fr
 
     assets:
         disableHLJS: true
