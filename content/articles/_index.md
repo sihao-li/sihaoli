@@ -23,6 +23,12 @@ hidemeta: true
 
 > <span style="color: #008080">Network externalities, Compatibility, and R\&D : A Literature Review</span><br>
 &emsp; Supervised by Marc Bourreau<br>
+<details>
+  <summary><strong>Abstract</strong></summary>
+  <div style="text-align: justify; line-height: 1.2; margin-top: .5em;">
+    This literature review aims to provide a synthesis of key themes in Industrial Organization, with a particular focus on markets characterized by network externalities. First, it explores the relationship between competition and innovation before examining the issue of compatibility and its implications, notably in the context of the Digital Markets Act.
+  </div>
+</details>
 
 > <span style="color: #008080">Phd Project - Essays on Economics : Innovation and Technological Novelty</span><br>
 &emsp; Supervised by Anne Plunket & Felipe Starosta de Waldemar<br>
@@ -36,6 +42,7 @@ Submit at *Venture Capital*, 2025<br>
 > <span style="color: #008080">[What are economists telling us in the top 5 ? A Structural Topic Models approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043)</span><br>
 Si Hao Li<br>
 Submit at *Bulletin of Economic Research*, 2025<br>
+[Data](https://github.com/sihao-li/Top-Five-journal-of-economics)
 
 > <span style="color: #008080">[L'esportisation : un processus socio-économique de l'industrie vidéoludique](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4863578)</span><br>
 Si Hao LI<br>
