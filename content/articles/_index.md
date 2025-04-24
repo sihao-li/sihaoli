@@ -3,33 +3,36 @@ title: "Publications"
 description: "Articles and preprints."
 ---
 
-### --------------- Peer-reviewed journal publications
+### --------------- Working Paper
 
-> <span style="color: #008080">[Minimal balanced collections and their application to core stability and other topics of game theory](https://doi.org/10.1016/j.dam.2023.07.025)</span><br>
-Dylan Laplace Mermoud, Michel Grabich, Peter Sudhölter<br>
-*Discrete Applied Mathematics 341*, pp. 60-81, 2023<br>
+> <span style="color: #008080">[From angel investors to venture capital: fundraising pathways in professional esports teams]</span><br>
+Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li<br>
+Submit at *Venture Capital*, 2025<br>
 
-### --------------- Conference publications
+> <span style="color: #008080">[What are economists telling us in the top 5 ? A Structural Topic Models approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043)</span><br>
+Si Hao Li<br>
+Submit at *Bulletin of Economic Research*, 2025<br>
 
-> <span style="color: #008080">[Combinatorics on Social Configurations](https://cgi.cse.unsw.edu.au/~eptcs/paper.cgi?GASCom2024.27)</span><br>
-Dylan Laplace Mermoud, Pierre Popoli<br>
-*EPTCS 403*, pp. 128-133, 2024<br>
+> <span style="color: #008080">[L'esportisation : un processus socio-économique de l'industrie vidéoludique](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4863578)</span><br>
+Si Hao LI<br>
+Resubmit at *Revue Française de socio-économie*, 2025<br>
 
-### --------------- Pre-prints
+### --------------- Other Publication
 
-> <span style="color: #008080">[Projection onto the core: An optimal reallocation to correct market failure](https://arxiv.org/abs/2411.11810v1)</span><br>
-Dylan Laplace Mermoud, 2024
+> <span style="color: #008080">[Enriching Agent-Based Modeling with LLM-Driven MBTI Personalities
+](https://github.com/sihao-li/Agent-Based-LLM-MBTI/blob/main/OASN_LiCarnapete_ABM.pdf)</span><br>
+Si Hao Li, 2025<br>
 
-> <span style="color: #008080">[Formation of steady coalitions](https://arxiv.org/abs/2410.05087v2)</span><br>
-Dylan Laplace Mermoud, 2024
+> <span style="color: #008080">[Les clubs amateurs face aux défis du financement: entre inégalités économiques et place croissante du privé](https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-2-page-117)</span><br>
+Antonin Chenard  et Si Hao Li<br>
+*Regards croisés sur l'économie*, 2024<br>
 
-> <span style="color: #008080">[A responsibility value for digraphs](https://arxiv.org/abs/2301.02728v1)</span><br>
-Rosa van den Ende, Dylan Laplace Mermoud, 2023<br>
+> <span style="color: #008080">[Des innovations financières aux conséquences néfastes?](https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-1-page-111?tab=premieres-lignes)</span><br>
+Jérôme Héricourt, Samuel Ligonnière, Si Hao Li, Olivier Pernet-Coudrier<br>
+*Regards croisés sur l'économie*, 2024<br>
 
-### --------------- Doctoral thesis
+### --------------- Master thesis
 
-> <span style="color: #008080">[Geometry of Set Functions in Game Theory: Combinatorial and Computational Aspects](https://arxiv.org/abs/2301.02950)</span><br>
-&emsp; Supervised by Michel Grabisch and Peter Sudhölter,<br>
-&emsp; Reviewed by Marina Nuñez and Tamas Solymosi,<br>
-&emsp; Chaired by Philippe Bich, <br>
-&emsp; Additional jury members: Jean-Jacques Herings and Philippe Solal.
+> <span style="color: #008080">[Innovation under Interoperability: An Analysis of Asymmetric Ad-Financed Platforms]</span><br>
+&emsp; Supervised by Marc Bourreau,<br>
+
