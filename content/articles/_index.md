@@ -17,7 +17,7 @@ Submit at *Bulletin of Economic Research*, 2025<br>
 Si Hao LI<br>
 Resubmit at *Revue Française de socio-économie*, 2025<br>
 
-### --------------- Other Publication
+### --------------- Other Publications
 
 > <span style="color: #008080">[Enriching Agent-Based Modeling with LLM-Driven MBTI Personalities
 ](https://github.com/sihao-li/Agent-Based-LLM-MBTI/blob/main/OASN_LiCarnapete_ABM.pdf)</span><br>
