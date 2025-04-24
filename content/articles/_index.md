@@ -1,6 +1,7 @@
 ---
 title: "Publications"
 description: "Articles and preprints."
+hidemeta: true
 ---
 
 ### --------------- Master thesis
