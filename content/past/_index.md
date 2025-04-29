@@ -72,6 +72,6 @@ Saint-Denis, FR  |  Jan 2023 – May 2023
 <details>
 <summary>📷 Photo</summary>
 
-![CPGE visit at Sarcelle](/suger.jpg)
+![CPGE visit at Sarcelle](/suger.png)
 
 </details>
