@@ -66,8 +66,8 @@ params:
               url: teaching/
             - name: Resume
               url: cv.pdf
-            # - name: Archive
-            #   url: archive/
+            - name: Learning Ressources
+              url: ressources/
     socialIcons:
         # - name: hal
         #   url: https://hal.science/search/index/?q=*&authIdPerson_i=1215683

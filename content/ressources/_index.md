@@ -49,6 +49,9 @@ hidemeta: true
 - **[Recent Advances in Applied Micro Methods (C. Cai)](https://christinecai.github.io/PublicGoods/applied_micro_methods.pdf)**  
   A PDF overview of the latest developments in applied microeconometrics techniques.
 
+- **[Double Machine Learning Tutorial (dm13450)](https://dm13450.github.io/2021/05/28/Double-ML.html)**  
+  A hands-on tutorial on the Double Machine Learning method for causal inference.
+
 ## 📈 Data Visualization
 
 - **[EconGraphs](https://www.econgraphs.org)**  
@@ -56,6 +59,10 @@ hidemeta: true
 
 - **[Interactive IO Graphs (Toxvaerd)](https://sites.google.com/site/toxvaerd11/home/interactive-graphs-for-io)**  
   Interactive visual tools tailored to Industrial Organization theory.
+
+- **[bbplot (R)](https://github.com/bbc/bbplot)**  
+  An R package for creating journalistically styled data visualizations inspired by BBC graphics.
+
 
 ## 🤖 LLM & AI for Social Science
 
@@ -71,6 +78,9 @@ hidemeta: true
 - **[ollama-r (Hauselin)](https://github.com/hauselin/ollama-r)**  
   Integration of open-source LLMs within R.
 
+- **[Quanteda Tutorials](https://tutorials.quanteda.io)**  
+  Interactive tutorials for the `quanteda` R package, specializing in quantitative text analysis for social science research.
+
 ## 🏭 Industrial Organization
 
 - **[Platform Strategies (Paul Belleflamme)](https://paulbelleflamme.substack.com/about?utm_source=subscribe_email&utm_content=learn_more)**  
@@ -78,6 +88,10 @@ hidemeta: true
 
 - **[Topics in Digital Economics/Industrial Organization (Paul Belleflamme)](https://www.youtube.com/@topicsindigitaleconomics7066/videos)**  
   A video channel covering Industrial Organization and digital economics topics.
+
+- **[Handbook of Dynamic and Empirical IO (V. Aguirregabiria)](http://aguirregabiria.net/wpapers/book_dynamic_io.pdf)**  
+  Handbook on dynamic and empirical methods in Industrial Organization.
+
 
 ## 🌍 Macroeconomics
 
