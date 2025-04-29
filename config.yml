@@ -52,7 +52,7 @@ params:
     profileMode:
           enabled: true
           title: Si Hao Li
-          subtitle: "I am a Research Assistant at RITM, Université Paris-Saclay, currently seeking PhD funding opportunities. I am enrolled at ENS Paris-Saclay and in the Master’s program Network Industries and the Digital Economy jointly offered by Université Paris-Dauphine, Université Paris-Saclay, and Télécom Paris. My research interests lie at the intersection of Industrial Organization, Digital Economics, the Economics of Innovation, and Cultural Economics."
+          subtitle: "I am a Research Assistant at RITM, Université Paris-Saclay, currently seeking PhD funding opportunities. I am enrolled at ENS Paris-Saclay and in the Master’s program Network Industries and the Digital Economy jointly offered by Université Paris-Dauphine, Université Paris-Saclay, and Télécom Paris. My research interests lie at the intersection of Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science."
           imageUrl: "photo3.png"
           imageWidth: 160
           imageHeight: 160
