@@ -62,7 +62,7 @@ Paris, FR  |  May 2023 – Jul 2024
 
 ---
 
-### Educational Assistant – Lycée Suger & Lycée ZEP+ de Saint-Denis
+### Educational Assistant – Lycée Suger
 
 Saint-Denis, FR  |  Jan 2023 – May 2023  
 
