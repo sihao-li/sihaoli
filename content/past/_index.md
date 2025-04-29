@@ -18,8 +18,8 @@ Louvain-la-Neuve, BE  |  Nov 2024 – Feb 2025
 <summary>📷 Photos</summary>
 
 ![UCLouvain CORE/LIDAM](/lln.png)  
-![UCLouvain CORE/LIDAM](/lln1.png)  
-![UCLouvain CORE/LIDAM](/lln2.png)
+![UCLouvain CORE/LIDAM](/lln2.png)  
+![UCLouvain CORE/LIDAM](/lln3.png)
 
 </details>
 
