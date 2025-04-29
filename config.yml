@@ -25,6 +25,9 @@ menu:
         - name: Learning Ressources
           url: ressources/
           weight: 4
+        - name: Past Positions
+          url: past/
+          weight: 5
 
 params:
     description: "I am a research assistant in economics at RITM (Université Paris Saclay)"
@@ -68,6 +71,8 @@ params:
               url: cv.pdf
             - name: Learning Ressources
               url: ressources/
+            - name: Past Positions
+              url: past/
     socialIcons:
         # - name: hal
         #   url: https://hal.science/search/index/?q=*&authIdPerson_i=1215683
