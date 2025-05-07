@@ -9,6 +9,8 @@ summary: "Comment exploiter les API de grands modèles de langue (LLM)  pour
 showToc: true
 disableAnchoredHeadings: false
 ---
+<!-- ouvre un conteneur justifié -->
+<div style="text-align: justify;">
 
 Les modèles génératifs (ChatGPT, Claude, Mistral, …) sont en train de transformer la recherche. Par exemple, dans son article intitulé "*Generative AI for Economic Research: Use Cases and Implications for Economists,*" l'économiste A. Korinek explore comment l'IA générative est amenée à transformer les pratiques en économie : il prévoit des gains de productivité significatifs grâce à l'automatisation de micro-tâches, telles que la génération de code ou la résolution de problèmes d'optimisation. 
 
@@ -32,7 +34,7 @@ D'autres solutions utilisent les possibilités offertes par les très grands mod
 
 Ainsi, un modèle de langage open source, tel que LLaMA, est un modèle dont le code source est librement accessible au public. Cela permet aux utilisateurs de télécharger, modifier et déployer le modèle sur leurs propres serveurs ou machines, offrant une grande flexibilité et personnalisation. Cependant, cette liberté s'accompagne de la nécessité de disposer des ressources nécessaires pour l’utilisation ou l’entrainement modèle. En revanche, un modèle payant accessible via une API, comme GPT-4o, est un service fourni par une entreprise où les utilisateurs accèdent au modèle en envoyant des requêtes à un serveur distant via une interface de programmation (API). Ce type de modèle simplifie l'intégration et l'utilisation, car toute l'infrastructure est gérée par le fournisseur du service. Toutefois, il offre moins de contrôle et de possibilités de personnalisation par rapport aux modèles open source. Lors du choix entre ces deux options, il est essentiel de considérer vos priorités en termes de coûts, de flexibilité, et de hardware. Le graphique suivant illustre de manière concrète les différentes stratégies d'annotation de texte. En fonction de cela, nous vous invitons à consulter ce tutoriel ou celui déjà présent sur le site CSS concernant la façon de fine-tuner BERT pour effectuer de la classification. Nous rappelons que nous nous concentrons sur la classification zero-shot, une méthode qui ne nécessite pas de fine-tuning. Pour autant, il est indissociable du « prompt », une instruction ou une requête donnée à un modèle de langage pour générer une réponse ou accomplir une tâche spécifique.
 
-Précisons tout de même que l’utilisation des API présente des avantages techniques, mais elle est également soumise à des contraintes économiques. Prenons un exemple : nous souhaitons classifier 200 résumés d’article scientifiques de différentes disciplines avec une moyenne de 150 mots par abstracts. Nous utilisons l’API GPT4 qui peut jusqu’à 4096 tokens. Un texte de 150 mots correspond généralement à environ 200 à 300 tokens Le tarif pour GPT-4 est plus élevé, avec des prix typiques autour de 0,03 $ pour 1000 tokens en entrée et 0,06 $ pour 1000 tokens en sortie. Pour 200 textes de 150 mots, si on estime environ 250 tokens par texte, cela représente 50 000 tokens (200 * 250). Ainsi le coût d’entrée pour 50 000 tokens serait : 50 000/1000 * 0.3 = 1,5 USD. Si chaque réponse générée (par exemple, une classification "économie", "maths", etc.) utilise environ 10 tokens, pour 200 réponses, on a 2000 tokens en sortie. : 2000/1000 ∗ 0 ,06 = 0,12USD. Ainsi, nous avons un coût total de 1,62 USD. Nous tenons à préciser que cette mesure est perfectible et que nous vous recommandons d’aller directement sur le site de l’API pour faire votre propre tarification.
+Précisons tout de même que l’utilisation des API présente des avantages techniques, mais elle est également soumise à des contraintes économiques. Prenons un exemple : nous souhaitons classifier 200 résumés d’article scientifiques de différentes disciplines avec une moyenne de 150 mots par abstracts. Nous utilisons l’API GPT4 qui peut jusqu’à 4096 tokens. Un texte de 150 mots correspond généralement à environ 200 à 300 tokens Le tarif pour GPT-4 est plus élevé, avec des prix typiques autour de 0,03 euros pour 1000 tokens en entrée et 00.6 euros pour 1000 tokens en sortie. Pour 200 textes de 150 mots, si on estime environ 250 tokens par texte, cela représente 50 000 tokens (200 * 250). Ainsi le coût d’entrée pour 50 000 tokens serait : 50 000/1000 * 0.3 = 1,5 USD. Si chaque réponse générée (par exemple, une classification "économie", "maths", etc.) utilise environ 10 tokens, pour 200 réponses, on a 2000 tokens en sortie. : 2000/1000 ∗ 0 ,06 = 0,12USD. Ainsi, nous avons un coût total de 1,62 USD. Nous tenons à préciser que cette mesure est perfectible et que nous vous recommandons d’aller directement sur le site de l’API pour faire votre propre tarification.
 
 Nous nous sommes concentrés sur les modèles les plus connus, tels que ceux de Mistral, Meta, OpenAI et Google. Ces modèles sont fréquemment mentionnés dans les articles de recherche en sciences sociales (G. Mens et A. Gallego, 2024 ; F. Gilardi et al. 2023). Le tableau illustre ces modèles, leur type, si c’est un modèle ou non, les contraintes techniques et économiques.
 
@@ -51,7 +53,7 @@ Les modèles de langage small et large se distinguent principalement par le nomb
 
 [^2]: Une contrainte technique élevée signifie que le modèle nécessite des ressources matérielles importantes, telles que des CPU, GPU et RAM
 
-## Annoter des textes avec l’API de Mistral[^3]
+## 3. Annoter des textes avec l’API de Mistral[^3]
 
 [^3]:Pour ce tutoriel, l'utilisation du langage Python est indispensable. Nous vous suggérons d'installer Python en utilisant la distribution Anaconda, puis de lancer un Notebook Jupyter. Une alternative possible est l'utilisation de Google Colab, mais il convient de vérifier que les données manipulées ne sont pas confidentielles
 
@@ -135,7 +137,7 @@ print(f"Annotation finito : {output_csv}.")
 Une requête prend en moyenne une à dix seconde, mais nous vous recommandons d’utiliser la bibliothèque time sur Python qui vous donnera le temps exact. Il se peut que le modèle de langage (LLM) rencontre des difficultés à annoter correctement certaines phrases. Toutefois, ces cas demeurent rares. Dans ces situations, nous vous suggérons de vérifier manuellement les annotations en utilisant la version gratuite du chat.
 ```
 
-## Évaluer la qualité de l'annotation
+## 4. Évaluer la qualité de l'annotation
 
 La question fondamentale après l’annotation est de questionner si elles sont correctes en mesurant la fiabilité de cette annotation. Nous rappelons que ces annotations relèvent de la quantification qui suppose des conventions d’équivalences préalables (Desrosières, 2008). Un consensus scientifique émerge autour de l'idée que l'évaluation de la fiabilité des annotations est essentielle, car elle conditionne la validité même du processus d'annotation. Cela implique, entre autres, une comparaison systématique entre les annotations produites par des humains et celles générées par la machine.
 
@@ -144,19 +146,19 @@ Pour évaluer l’efficacité et la qualité de l’annotation, la pratique est 
 **Précision**
 
 $$
-\text{Précision} \;=\; \frac{\text{Vrai Positif}}{\text{Vrai Positif} + \text{Faux Positif}}
+\text{Précision} \=\ \frac{\text{Vrai Positif}}{\text{Vrai Positif} + \text{Faux Positif}}
 $$
 
 **Rappel**
 
 $$
-\text{Rappel} \;=\; \frac{\text{Vrai Positif}}{\text{Vrai Positif} + \text{Faux Négatif}}
+\text{Rappel} \=\ \frac{\text{Vrai Positif}}{\text{Vrai Positif} + \text{Faux Négatif}}
 $$
 
 **F‑score (F1)**
 
 $$
-F_{1} \;=\; 2 \times \frac{\text{Précision} \times \text{Rappel}}
+F_{1} \=\ 2 \times \frac{\text{Précision} \times \text{Rappel}}
                       {\text{Précision} + \text{Rappel}}
 $$
 
@@ -165,7 +167,7 @@ $$
 > ce qui réduit la précision. Nous tenons donc compte d’un **taux d’erreur d’annotation (TER)** :
 
 $$
-\text{TER} \;=\; \frac{\text{Erreur d’annotation}}
+\text{TER} \=\ \frac{\text{Erreur d’annotation}}
                       {\text{Vrai Positif} + \text{Faux Positif}}
 $$
 
@@ -174,25 +176,25 @@ Accord inter‑annotateurs : kappa de Fleiss
 Avec $P_{0}$ la proportion d’accords observés et $P_{e}$ celle attendue par hasard :
 
 $$
-P_{0} \;=\; \frac{1}{N\,n\,(n-1)}
+P_{0} \=\ \frac{1}{N\,n\,(n-1)}
             \sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}\,\bigl(n_{ij}-1\bigr)
 $$
 
 $$
-P_{e} \;=\; \sum_{j=1}^{k} p_{j}^{2}
+P_{e} \=\ \sum_{j=1}^{k} p_{j}^{2}
 $$
 
 **Kappa de Fleiss**
 
 $$
-k \;=\; \frac{P_{0} - P_{e}}{1 - P_{e}}
+k \=\ \frac{P_{0} - P_{e}}{1 - P_{e}}
 $$
 
 
 Pour pondérer ce kappa par la qualité des annotations :
 
 $$
-E_{k} \;=\; k \times \bigl(1 - \text{TER}\bigr)
+E_{k} \=\ k \times \bigl(1 - \text{TER}\bigr)
 $$
 
 
@@ -228,3 +230,5 @@ print("Kappa de Cohen:", kappa)
 **Kappa de Cohen :** `0.5952`
 
 Comme en témoignent les métriques, l'annotation est globalement satisfaisante avec un Kappa près de 0,6, bien qu'elle présente encore un nombre considérable d'erreurs. Les résultats peuvent varier considérablement en fonction du prompt ou du dataset utilisé. Par exemple, pour une tâche consistant à déterminer si des tweets politiques sont démocrates ou républicains, la machine obtient de bons scores moyen de l'ordre de 0.9. En revanche, pour une tâche plus complexe, comme dans notre cas, les scores sont plus faibles en raison de la difficulté du modèle à comprendre ces textes. L'annotation de ces 100 phrases m'a pris environ 10 à 15 minutes, alors que Mistral a accompli la même tâche en 30 secondes. Cela représente un gain de temps significatif, mais il convient de noter que cela implique un coût économique supplémentaire.
+
+<!-- …tout ton article… -->
