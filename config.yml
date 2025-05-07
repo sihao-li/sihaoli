@@ -29,7 +29,7 @@ menu:
           url: past/
           weight: 5
         - name: Tutorials and Data
-          url: publication/
+          url: publications/
           weight : 6
 
 params:
