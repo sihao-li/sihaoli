@@ -1,7 +1,7 @@
 ---
 title: "[FR] Tutoriel : Faire de la classification zero-shot avec des API de LLM en sciences sociales " 
-date: 2024-04-02
-lastmod: 2024-06-29
+date: 2025-05-07
+lastmod: 2025-05-07
 url: /a/
 author: "Si Hao Li & Emilien Schultz"
 description: "Comment exploiter les API de grands modèles de langue (LLM)  pour réaliser de la classification zero‑shot dans les sciences sociales.."
@@ -34,8 +34,9 @@ D'autres solutions utilisent les possibilités offertes par les très grands mod
 
 Ainsi, un modèle de langage open source, tel que LLaMA, est un modèle dont le code source est librement accessible au public. Cela permet aux utilisateurs de télécharger, modifier et déployer le modèle sur leurs propres serveurs ou machines, offrant une grande flexibilité et personnalisation. Cependant, cette liberté s'accompagne de la nécessité de disposer des ressources nécessaires pour l’utilisation ou l’entrainement modèle. En revanche, un modèle payant accessible via une API, comme GPT-4o, est un service fourni par une entreprise où les utilisateurs accèdent au modèle en envoyant des requêtes à un serveur distant via une interface de programmation (API). Ce type de modèle simplifie l'intégration et l'utilisation, car toute l'infrastructure est gérée par le fournisseur du service. Toutefois, il offre moins de contrôle et de possibilités de personnalisation par rapport aux modèles open source. Lors du choix entre ces deux options, il est essentiel de considérer vos priorités en termes de coûts, de flexibilité, et de hardware. Le graphique suivant illustre de manière concrète les différentes stratégies d'annotation de texte. En fonction de cela, nous vous invitons à consulter ce tutoriel ou celui déjà présent sur le site CSS concernant la façon de fine-tuner BERT pour effectuer de la classification. Nous rappelons que nous nous concentrons sur la classification zero-shot, une méthode qui ne nécessite pas de fine-tuning. Pour autant, il est indissociable du « prompt », une instruction ou une requête donnée à un modèle de langage pour générer une réponse ou accomplir une tâche spécifique.
 
+<div style="text-align:center">
 ![Figure 1](/genllm.png)
-
+</div>
 
 Précisons tout de même que l’utilisation des API présente des avantages techniques, mais elle est également soumise à des contraintes économiques. Prenons un exemple : nous souhaitons classifier 200 résumés d’article scientifiques de différentes disciplines avec une moyenne de 150 mots par abstracts. Nous utilisons l’API GPT4 qui peut jusqu’à 4096 tokens. Un texte de 150 mots correspond généralement à environ 200 à 300 tokens Le tarif pour GPT-4 est plus élevé, avec des prix typiques autour de 0,03 euros pour 1000 tokens en entrée et 00.6 euros pour 1000 tokens en sortie. Pour 200 textes de 150 mots, si on estime environ 250 tokens par texte, cela représente 50 000 tokens (200 * 250). Ainsi le coût d’entrée pour 50 000 tokens serait : 50 000/1000 * 0.3 = 1,5 USD. Si chaque réponse générée (par exemple, une classification "économie", "maths", etc.) utilise environ 10 tokens, pour 200 réponses, on a 2000 tokens en sortie. : 2000/1000 ∗ 0 ,06 = 0,12USD. Ainsi, nous avons un coût total de 1,62 USD. Nous tenons à préciser que cette mesure est perfectible et que nous vous recommandons d’aller directement sur le site de l’API pour faire votre propre tarification.
 
