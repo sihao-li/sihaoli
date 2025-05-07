@@ -1,9 +1,5 @@
 ---
-title: "Publications"
-description: "List of articles and preprints."
+title: "Tutorial/Data"
+author: "Si Hao Li"
+description: "Tutorials and databases"
 ---
-
-### Minimal balanced collections and their application to core stability and other topics of game theory
-
-- Dylan Laplace Mermoud, Michel Grabisch, Peter Sudhölter
-- Discrete Applied Mathematics
