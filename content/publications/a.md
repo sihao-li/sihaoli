@@ -34,9 +34,12 @@ D'autres solutions utilisent les possibilités offertes par les très grands mod
 
 Ainsi, un modèle de langage open source, tel que LLaMA, est un modèle dont le code source est librement accessible au public. Cela permet aux utilisateurs de télécharger, modifier et déployer le modèle sur leurs propres serveurs ou machines, offrant une grande flexibilité et personnalisation. Cependant, cette liberté s'accompagne de la nécessité de disposer des ressources nécessaires pour l’utilisation ou l’entrainement modèle. En revanche, un modèle payant accessible via une API, comme GPT-4o, est un service fourni par une entreprise où les utilisateurs accèdent au modèle en envoyant des requêtes à un serveur distant via une interface de programmation (API). Ce type de modèle simplifie l'intégration et l'utilisation, car toute l'infrastructure est gérée par le fournisseur du service. Toutefois, il offre moins de contrôle et de possibilités de personnalisation par rapport aux modèles open source. Lors du choix entre ces deux options, il est essentiel de considérer vos priorités en termes de coûts, de flexibilité, et de hardware. Le graphique suivant illustre de manière concrète les différentes stratégies d'annotation de texte. En fonction de cela, nous vous invitons à consulter ce tutoriel ou celui déjà présent sur le site CSS concernant la façon de fine-tuner BERT pour effectuer de la classification. Nous rappelons que nous nous concentrons sur la classification zero-shot, une méthode qui ne nécessite pas de fine-tuning. Pour autant, il est indissociable du « prompt », une instruction ou une requête donnée à un modèle de langage pour générer une réponse ou accomplir une tâche spécifique.
 
+![Figure 1](/genllm.png)
+
+
 Précisons tout de même que l’utilisation des API présente des avantages techniques, mais elle est également soumise à des contraintes économiques. Prenons un exemple : nous souhaitons classifier 200 résumés d’article scientifiques de différentes disciplines avec une moyenne de 150 mots par abstracts. Nous utilisons l’API GPT4 qui peut jusqu’à 4096 tokens. Un texte de 150 mots correspond généralement à environ 200 à 300 tokens Le tarif pour GPT-4 est plus élevé, avec des prix typiques autour de 0,03 euros pour 1000 tokens en entrée et 00.6 euros pour 1000 tokens en sortie. Pour 200 textes de 150 mots, si on estime environ 250 tokens par texte, cela représente 50 000 tokens (200 * 250). Ainsi le coût d’entrée pour 50 000 tokens serait : 50 000/1000 * 0.3 = 1,5 USD. Si chaque réponse générée (par exemple, une classification "économie", "maths", etc.) utilise environ 10 tokens, pour 200 réponses, on a 2000 tokens en sortie. : 2000/1000 ∗ 0 ,06 = 0,12USD. Ainsi, nous avons un coût total de 1,62 USD. Nous tenons à préciser que cette mesure est perfectible et que nous vous recommandons d’aller directement sur le site de l’API pour faire votre propre tarification.
 
-Nous nous sommes concentrés sur les modèles les plus connus, tels que ceux de Mistral, Meta, OpenAI et Google. Ces modèles sont fréquemment mentionnés dans les articles de recherche en sciences sociales (G. Mens et A. Gallego, 2024 ; F. Gilardi et al. 2023). Le tableau illustre ces modèles, leur type, si c’est un modèle ou non, les contraintes techniques et économiques.
+Nous nous sommes concentrés sur les modèles les plus connus, tels que ceux de Mistral, Meta, OpenAI et Google. Ces modèles sont fréquemment mentionnés dans les articles de recherche en sciences sociales (G. Mens et A. Gallego, 2024 ; F. Gilardi et al. 2023). Le tableau illustre ces modèles, leur type, si c’est un modèle open-source ou non, les contraintes techniques et économiques.
 
 | LLM                | Type de LLM | API et/ou Open Source | Contraintes techniques                       | Contraintes économiques                                            | Prix |
 |--------------------|-------------|-----------------------|----------------------------------------------|--------------------------------------------------------------------|------|
@@ -49,7 +52,7 @@ Nous nous sommes concentrés sur les modèles les plus connus, tels que ceux de 
 | Gemini 1.5 flash   | Large       | API                  | Faible                                       | API payante                                                        | Entrée : $0,35 / 1 M tokens<br>Sortie : $1 / 1 M tokens |
 
 
-Les modèles de langage small et large se distinguent principalement par le nombre de paramètres qu'ils possèdent, leur capacité de traitement, leur performance, leur consommation de ressources et leurs applications. Par exemple LLaMA 3 8B, avec ses 7 milliards de paramètres, est plus rapide et moins complexe, ce qui le rend adapté à des tâches simples et spécifiques, tout en étant accessible en termes de ressources informatiques[^2]. En revanche, Mistral 8x2B, possédant plusieurs centaines de milliards de paramètres, offre une capacité de traitement et une performance nettement supérieure, notamment pour des tâches complexes.
+Les modèles de langage small et large se distinguent principalement par le nombre de paramètres qu'ils possèdent, leur capacité de traitement, leur performance, leur consommation de ressources et leurs applications. Par exemple LLaMA 3 8B, avec ses 7 milliards de paramètres, est plus rapide et moins complexe, ce qui le rend adapté à des tâches simples et spécifiques, tout en étant accessible en termes de ressources informatiques[^2]. En revanche, Mistral 8x2B, possédant plusieurs centaines de milliards de paramètres, offre une capacité de traitement et une performance nettement supérieure, notamment pour des tâches plus complexes.
 
 [^2]: Une contrainte technique élevée signifie que le modèle nécessite des ressources matérielles importantes, telles que des CPU, GPU et RAM
 
@@ -229,6 +232,36 @@ print("Kappa de Cohen:", kappa)
 
 **Kappa de Cohen :** `0.5952`
 
-Comme en témoignent les métriques, l'annotation est globalement satisfaisante avec un Kappa près de 0,6, bien qu'elle présente encore un nombre considérable d'erreurs. Les résultats peuvent varier considérablement en fonction du prompt ou du dataset utilisé. Par exemple, pour une tâche consistant à déterminer si des tweets politiques sont démocrates ou républicains, la machine obtient de bons scores moyen de l'ordre de 0.9. En revanche, pour une tâche plus complexe, comme dans notre cas, les scores sont plus faibles en raison de la difficulté du modèle à comprendre ces textes. L'annotation de ces 100 phrases m'a pris environ 10 à 15 minutes, alors que Mistral a accompli la même tâche en 30 secondes. Cela représente un gain de temps significatif, mais il convient de noter que cela implique un coût économique supplémentaire.
+## Conclusion : lecture critique des résultats et bonnes pratiques
+
+Les indicateurs obtenus montrent qu’un **Kappa de Cohen ≃ 0,60** et un **F1 macro = 0,74** placent notre pipeline « zero‑shot + prompt unique » dans la zone d’accord **modéré** (Landis & Koch, 1977). Autrement dit, le modèle surpasse nettement le hasard tout en restant perfectible : environ **un quart des tweets** sont encore mal classés. Cette performance est comparable à ce que l’on observe dans la littérature pour des tâches de complexité moyenne, mais elle reste inférieure aux scores (> 0,90) rapportés pour des classifications plus simples (p. ex. étiquetage partisan), où le signal lexical semble plus explicite.
+
+Sur le plan opérationnel, **100 tweets annotés en ≈ 30 s** contre **10 – 15 min** en annotation manuelle démontrent un gain de productivité, au prix d’un **surcoût de ≈ 1,62 USD** (tarification GPT‑4, section 2). Dans une étude à grande échelle, ce coût devient non‑négligeable ; il doit donc être mis en balance avec :
+
+- le temps économisé pour l’équipe de recherche,  
+- la précision additionnelle éventuellement obtenue via un raffinage du prompt ou un *few‑shot*,  
+- la possibilité de **renforcer la validité** au moyen d’une double annotation (LLM + humain) et d’un arbitrage des désaccords.
+
+**Recommandations pour réplication et amélioration**
+
+*   Fixer toutes les hyper‑paramètres (modèle, température, top‑p) et versionner le prompt afin d’assurer la reproductibilité.  
+*   Tester la robustesse sur au moins **trois jeux de données** distincts (ou bootstraps) et rapporter l’intervalle de confiance du Kappa (± 2 σ).  
+*   Envisager un **prompt few‑shot** (3 – 5 exemples) ou un **adapter fine‑tuning** si la tâche se révèle plus nuancée que prévu.  
+
+En résumé, l’annotation zero‑shot via API constitue un **levier méthodologique efficace** pour les sciences sociales. Néanmoins, son adoption doit rester **informée par une évaluation empirique rigoureuse**, le contrôle des biais et une analyse coût‑bénéfice (surtout lorsque le jeu de donnée est énorme).
+
+## Bibliographie
+
+1. **Korinek, A.** (2023). *Generative AI for Economic Research: Use Cases and Implications for Economists.*  
+   _Journal of Economic Literature, 61_(4), 1281‑1317. <https://doi.org/10.1257/jel.20231736> :contentReference[oaicite:0]{index=0}  
+
+2. **Do, S., Ollion, É., & Shen, R.** (2024). *The Augmented Social Scientist: Using Sequential Transfer Learning to Annotate Millions of Texts with Human‑Level Accuracy.*  
+   _Sociological Methods & Research, 53_(3), 1167‑1200. <https://doi.org/10.1177/00491241221134526> :contentReference[oaicite:1]{index=1}  
+
+3. **Le Mens, G., & Gallego, A.** (2024). *Positioning Political Texts with Large Language Models by Asking and Averaging.*  
+   _Political Analysis_, 1‑9. <https://doi.org/10.1017/pan.2024.29> :contentReference[oaicite:2]{index=2}  
+
+4. **Gilardi, F., Alizadeh, M., & Kubli, M.** (2023). *ChatGPT Outperforms Crowd Workers for Text‑Annotation Tasks.*  
+   _Proceedings of the National Academy of Sciences, 120_(30), e2305016120. <https://doi.org/10.1073/pnas.2305016120> :contentReference[oaicite:3]{index=3}  
 
 <!-- …tout ton article… -->
