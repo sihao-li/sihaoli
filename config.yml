@@ -28,6 +28,9 @@ menu:
         - name: Past Positions
           url: past/
           weight: 5
+        - name: Tutorials and Data
+          url: publication/
+          weight : 6
 
 params:
     description: "I am a research assistant in economics at RITM (Université Paris Saclay)"
@@ -73,6 +76,8 @@ params:
               url: ressources/
             - name: Past Positions
               url: past/
+            - name: Tutorials and Data
+              url: publications/
     socialIcons:
         # - name: hal
         #   url: https://hal.science/search/index/?q=*&authIdPerson_i=1215683
