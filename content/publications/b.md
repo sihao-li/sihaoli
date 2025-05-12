@@ -2,7 +2,7 @@
 title: "[FR] Éclairer l’ombre des cartels : petite introduction à l’économétrie de l’antitrust" 
 date: 2025-05-07
 lastmod: 2025-05-07
-url: /a/
+url: /b/
 author: "Si Hao Li"
 description: "Économétrie de l’antitrust : Mesurer l’impact des cartels"
 summary: "Économétrie de l’antitrust : Mesurer l’impact des cartels." 
