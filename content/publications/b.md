@@ -18,7 +18,7 @@ Déterminer ces prix ou marges contrefactuels fait appel à des méthodes écono
 
 Dans ce tutoriel, nous présentons de manière structurée et accessible les principales méthodes économétriques employées pour évaluer l’effet et le surcoût d’un cartel. Nous commencerons par des outils statistiques de base, puis évoluerons vers des méthodes économétriques plus avancées.
 
-## 1. Le T Test : détecter une hausse anormale des prix
+## 1. Le t Test : détecter une hausse anormale des prix
 
 Le test t de Student est un outil statistique fondamental pour comparer la moyenne d’une variable quantitative entre deux échantillons. Intuitivement, il répond à la question : « La différence observée entre ces deux moyennes est-elle significative ou pourrait-elle être due au hasard ? ». Dans le contexte d’un cartel, on peut l’utiliser pour vérifier si les prix moyens durant la période de collusion sont significativement plus élevés que les prix hors cartel. Par exemple, si l’on dispose des données de prix de ventes de produits avant et pendant l’entente, un test t permettra d’évaluer si l’augmentation moyenne de prix est statistiquement significative (c’est-à-dire trop importante pour s’expliquer par de simples fluctuations aléatoires).
 
@@ -59,7 +59,7 @@ Lorsque l’on dispose de données détaillées, par exemple des prix pour une m
 
 Pour bien isoler l’effet du cartel, Laitenberger et Smuda intègrent également des effets fixes (fixed effects) dans leur modèle  Un effet fixe est essentiellement une constante spécifique à un certain niveau de regroupement des données, qui permet de contrôler les différences systématiques non observées. Ici, on peut inclure par exemple : un effet fixe par marque (qui capte les différences permanentes de niveau de prix entre les marques, indépendamment du cartel), un effet fixe par distributeur (qui capte les politiques commerciales propres à chaque enseigne), voire des effets fixes temporels (par année ou par mois) pour prendre en compte les tendances macroéconomiques ou saisonnières. Grâce à ces effets fixes, on neutralise les facteurs inobservés susceptibles de biaiser l’estimation – par exemple, si une marque “premium” est toujours plus chère qu’une marque d’entrée de gamme, cet écart fixe sera distingué de l’effet du cartel.
 
-> **Encadré – Effets fixes et régression de panel **  
+> **Encadré – Effets fixes et régression de panel**  
 > Les effets fixes sont un moyen de contrôler des différences constantes dans le temps au sein des données de panel. Par exemple, un effet fixe par produit permet à chaque produit d’avoir son propre niveau de base, ainsi on ne compare que les variations par rapport à ce niveau. C’est comme si, pour chaque produit, on soustrayait sa moyenne propre, éliminant tout biais dû à des caractéristiques permanentes de ce produit. Les effets fixes sont très utiles pour isoler l’impact d’un événement (ici le cartel) en éliminant le bruit des hétérogénéités non mesurées.
 
 ## 3. La méthode Difference-in-Differences
