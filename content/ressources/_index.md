@@ -8,8 +8,8 @@ hidemeta: true
 
 ## 📝 How to Write & Read an Economics Article
 
-- **[How to Write an Economics Article (Hal Varian)](https://people.ischool.berkeley.edu/~hal/Papers/how.pdf)**  
-  A classic by Hal Varian outlining a clear model for structuring and writing economics papers—highly recommended by Marc Bourreau.
+- **[How to Build an Economic Model (Hal Varian)](https://people.ischool.berkeley.edu/~hal/Papers/how.pdf)**  
+  A classic by Hal Varian recommended by my master thesis supervisor.
 
 - **[LaTeX Paper Writing Tips](https://github.com/guanyingc/latex_paper_writing_tips)**  
   A curated set of best practices and tips for writing academic papers in LaTeX, covering layout, formatting, and organization.
