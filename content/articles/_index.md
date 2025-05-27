@@ -37,7 +37,7 @@ hidemeta: true
 
 > <span style="color: #008080">From angel investors to venture capital: fundraising pathways in professional esports teams</span><br>
 Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li<br>
-Submit at *Venture Capital*, 2025<br>
+**__News!__** Revise & Resubmit at *Venture Capital*, 2025<br>
 
 > <span style="color: #008080">[What are economists telling us in the top 5 ? A Structural Topic Models approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043)</span><br>
 Si Hao Li<br>
