@@ -58,7 +58,7 @@ params:
     profileMode:
           enabled: true
           title: Si Hao Li
-          subtitle: "I am a Research Assistant at RITM, Université Paris-Saclay. Incoming Phd candidate in Economics at Telecom Paris (CREST). My research interests lie at the intersection of Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science."
+          subtitle: "Incoming Phd candidate in Economics at Telecom Paris (CREST). My research interests lie at the intersection of Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science."
           imageUrl: "photo3.png"
           imageWidth: 160
           imageHeight: 160
