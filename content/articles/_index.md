@@ -4,6 +4,33 @@ description: "Articles and preprints."
 hidemeta: true
 ---
 
+### --------------- Working Paper
+
+> <span style="color: #008080">Co-invention and knowledge transfer in science-industry collaboration : Evidence on Recombinant Novelty</span><br>
+Si Hao Li, Anne Plunket and Felipe Starosta de Waldemar<br>
+**__News!__** Submit extented abstract for 8th Geography of Innovation Conference, 2025<br>
+
+<details>
+  <summary><strong>Abstract</strong></summary>
+  <div style="text-align: justify; line-height: 1.2; margin-top: .5em;">
+    We study how science–industry collaborations foster technological novelty at the inventor level. Using French patent data (1976–2013), we measure recombinant novelty as the creation of new IPC-class combinations and estimate causal effects through a dynamic difference-in-differences design. A first co-invention with a scientific partner substantially raises the probability of recombinant novelty, especially immediately after collaboration, consistent with tacit knowledge transfer through learning-by-doing. Network embeddedness conditions this effect: clustered and constrained positions dampen novelty, whereas more open networks enhance it. Geographical proximity plays a weaker role, with collaborations at distance generating comparable outcomes. Finally, technological context matters: inventors embedded in environments with higher revealed technological advantage display stronger and more persistent gains from collaboration. These findings highlight the catalytic role of science–industry partnerships in opening new technological trajectories, while showing that their impact depends less on geography than on inventors’ network structure and the absorptive capacity of their technological environment.
+  </div>
+</details>
+
+
+> <span style="color: #008080">From angel investors to venture capital: fundraising pathways in professional esports teams</span><br>
+Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li<br>
+**__News!__** Revise & Resubmit at *Venture Capital*, 2025<br>
+
+> <span style="color: #008080">[What are economists telling us in the top 5 ? A Structural Topic Models approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043)</span><br>
+Si Hao Li<br>
+Working paper, 2025<br>
+**[Data](https://github.com/sihao-li/Top-Five-journal-of-economics)**
+
+> <span style="color: #008080">[L'esportisation : un processus socio-économique de l'industrie vidéoludique](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4863578)</span><br>
+Si Hao LI<br>
+Resubmit at *Revue Française de socio-économie*, 2025<br>
+
 ### --------------- Master thesis
 
 > <span style="color: #008080;">
@@ -19,8 +46,6 @@ hidemeta: true
   </div>
 </details>
 
-
-
 > <span style="color: #008080">Network externalities, Compatibility, and R\&D : A Literature Review</span><br>
 &emsp; Supervised by Marc Bourreau<br>
 <details>
@@ -29,24 +54,6 @@ hidemeta: true
     This literature review aims to provide a synthesis of key themes in Industrial Organization, with a particular focus on markets characterized by network externalities. First, it explores the relationship between competition and innovation before examining the issue of compatibility and its implications, notably in the context of the Digital Markets Act.
   </div>
 </details>
-
-> <span style="color: #008080">Phd Project - Essays on Economics : Innovation and Technological Novelty</span><br>
-&emsp; Supervised by Anne Plunket & Felipe Starosta de Waldemar<br>
-
-### --------------- Working Paper
-
-> <span style="color: #008080">From angel investors to venture capital: fundraising pathways in professional esports teams</span><br>
-Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li<br>
-**__News!__** Revise & Resubmit at *Venture Capital*, 2025<br>
-
-> <span style="color: #008080">[What are economists telling us in the top 5 ? A Structural Topic Models approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043)</span><br>
-Si Hao Li<br>
-Submit at *Bulletin of Economic Research*, 2025<br>
-**[Data](https://github.com/sihao-li/Top-Five-journal-of-economics)**
-
-> <span style="color: #008080">[L'esportisation : un processus socio-économique de l'industrie vidéoludique](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4863578)</span><br>
-Si Hao LI<br>
-Resubmit at *Revue Française de socio-économie*, 2025<br>
 
 ### --------------- Other Publications
 
