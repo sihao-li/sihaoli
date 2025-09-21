@@ -3,6 +3,12 @@ title: "Publications"
 description: "Articles and preprints."
 hidemeta: true
 ---
+### --------------- Phd thesis
+
+> <span style="color: #008080;">
+>   Infrastructure Sharing in Network Industries
+> </span><br>
+> &emsp; Supervised by Marc Bourreau and Lukasz Grzybowski
 
 ### --------------- Working Paper
 
