@@ -14,7 +14,7 @@ hidemeta: true
 
 > <span style="color: #008080">Co-invention and knowledge transfer in science-industry collaboration : Evidence on Recombinant Novelty</span><br>
 Si Hao Li, Anne Plunket and Felipe Starosta de Waldemar<br>
-**__News!__** Submit extented abstract for 8th Geography of Innovation Conference, 2025<br>
+**__News!__** Accepted for presentation at the 8th Geography of Innovation Conference, 2025<br>
 
 <details>
   <summary><strong>Abstract</strong></summary>
