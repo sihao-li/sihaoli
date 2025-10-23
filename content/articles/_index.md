@@ -3,14 +3,14 @@ title: "Publications"
 description: "Articles and preprints."
 hidemeta: true
 ---
-### --------------- Phd thesis
+### --------------- Phd Thesis
 
 > <span style="color: #008080;">
 >   Infrastructure Sharing in Network Industries
 > </span><br>
 > &emsp; Supervised by Marc Bourreau and Lukasz Grzybowski
 
-### --------------- Working Paper
+### --------------- Working Paper / Work in progress
 
 > <span style="color: #008080">Co-invention and knowledge transfer in science-industry collaboration : Evidence on Recombinant Novelty</span><br>
 Si Hao Li, Anne Plunket and Felipe Starosta de Waldemar<br>
@@ -33,9 +33,9 @@ Si Hao Li<br>
 Working paper, 2025<br>
 **[Data](https://github.com/sihao-li/Top-Five-journal-of-economics)**
 
-> <span style="color: #008080">[L'esportisation : un processus socio-économique de l'industrie vidéoludique](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4863578)</span><br>
-Si Hao LI<br>
-Resubmit at *Revue Française de socio-économie*, 2025<br>
+> <span style="color: #008080">A Symptom of Conflict: Grey markets, Agency problems, and Price segmentation in Digital platforms</span><br>
+Si Hao LI, Martin Delville<br>
+Work in progress, 2025<br>
 
 ### --------------- Master thesis
 
