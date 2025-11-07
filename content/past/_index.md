@@ -38,7 +38,6 @@ Palaiseau, FR  |  Sept 2023 – Jun 2024
 <summary>📷 Photos</summary>
 
 ![CREST](/crest.png)  
-![CREST](/crest2.png)
 
 </details>
 

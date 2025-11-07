@@ -33,7 +33,7 @@ menu:
           weight : 6
 
 params:
-    description: "I am a research assistant in economics at RITM (Université Paris Saclay)"
+    description: "Phd candidate in Economics at Telecom Paris (CREST). My research interests lie at the intersection of Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science."
     author: Si Hao Li
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "02 Jan 2006"
@@ -104,7 +104,7 @@ params:
         - name: Twitter
           url: https://x.com/SihaoLS
         - name: Email
-          url: si.li@ens-paris-saclay.fr
+          url: si.li@ip-paris.fr
 
     assets:
         disableHLJS: true

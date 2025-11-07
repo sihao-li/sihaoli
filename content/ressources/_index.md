@@ -28,7 +28,7 @@ hidemeta: true
 - **[QuantEcon Lectures (Python)](https://quantecon.org/lectures/)**  
   Interactive Python lectures covering econometrics and quantitative modeling fundamentals.
 
-- **[Coding for Economists (A. Turell)](https://aeturrell.github.io/coding-for-economists/intro.html)**  
+- **[Coding for Economists](https://aeturrell.github.io/coding-for-economists/intro.html)**  
   A comprehensive Python tutorial focused on data science and econometric applications.
 
 - **[Sciencescape (Medialab)](https://medialab.github.io/sciencescape/)**  
@@ -49,7 +49,7 @@ hidemeta: true
 - **[Recent Advances in Applied Micro Methods (C. Cai)](https://christinecai.github.io/PublicGoods/applied_micro_methods.pdf)**  
   A PDF overview of the latest developments in applied microeconometrics techniques.
 
-- **[Double Machine Learning Tutorial (dm13450)](https://dm13450.github.io/2021/05/28/Double-ML.html)**  
+- **[Double Machine Learning Tutorial](https://dm13450.github.io/2021/05/28/Double-ML.html)**  
   A hands-on tutorial on the Double Machine Learning method for causal inference.
 
 ## 📈 Data Visualization
@@ -57,7 +57,7 @@ hidemeta: true
 - **[EconGraphs](https://www.econgraphs.org)**  
   A collection of interactive charts to illustrate classic economic concepts.
 
-- **[Interactive IO Graphs (Toxvaerd)](https://sites.google.com/site/toxvaerd11/home/interactive-graphs-for-io)**  
+- **[Interactive IO Graphs](https://sites.google.com/site/toxvaerd11/home/interactive-graphs-for-io)**  
   Interactive visual tools tailored to Industrial Organization theory.
 
 - **[bbplot (R)](https://github.com/bbc/bbplot)**  

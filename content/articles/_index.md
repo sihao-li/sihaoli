@@ -23,17 +23,16 @@ Si Hao Li, Anne Plunket and Felipe Starosta de Waldemar<br>
   </div>
 </details>
 
-
 > <span style="color: #008080">From angel investors to venture capital: fundraising pathways in professional esports teams</span><br>
 Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li<br>
-**__News!__** Revise & Resubmit at *Venture Capital*, 2025<br>
+**__News!__** Conditionally accepted at *Venture Capital*, 2025<br>
 
 > <span style="color: #008080">[What are economists telling us in the top 5 ? A Structural Topic Models approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043)</span><br>
 Si Hao Li<br>
 Working paper, 2025<br>
 **[Data](https://github.com/sihao-li/Top-Five-journal-of-economics)**
 
-> <span style="color: #008080">A Symptom of Conflict: Grey markets, Agency problems, and Price segmentation in Digital platforms</span><br>
+> <span style="color: #008080">Second-Degree Price Discrimination in Digital Goods: Grey Markets and Conflict</span><br>
 Si Hao LI, Martin Delville<br>
 Work in progress, 2025<br>
 
