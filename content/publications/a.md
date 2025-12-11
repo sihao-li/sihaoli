@@ -1,7 +1,7 @@
 ---
 title: "[FR] Tutoriel : Faire de la classification zero-shot avec des API de LLM en sciences sociales " 
-date: 2025-05-07
-lastmod: 2025-05-07
+date: 2024-09-01
+lastmod: 2024-09-01
 url: /a/
 author: "Si Hao Li & Emilien Schultz"
 description: "Comment exploiter les API de grands modèles de langue (LLM)  pour réaliser de la classification zero‑shot dans les sciences sociales.."

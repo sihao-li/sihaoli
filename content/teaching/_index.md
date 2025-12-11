@@ -1,23 +1,31 @@
 ---
 title: "Teaching"
-description: "List of the different tutorials and classes I gave."
+description: "Overview of courses taught at undergraduate and graduate levels."
 ---
 
-![Teaching 🎓](https://img.shields.io/badge/Teaching-Overview-green)
+Here is an overview of my teaching experience in Economics and Social Sciences.
 
-### Academic Year 2024/2025
+### Current Year (2024–2025)
 
-| Course                                              | Level                         | Institution                                    |
-|:----------------------------------------------------|:------------------------------|:-----------------------------------------------|
-| 🎓 **Macréconomie**                                | BA1                           | Université Paris I Panthéon-Sorbonne            |
-| 📜 **Histoire de la pensée économique**              | BA3                           | Université Paris I Panthéon-Sorbonne            |
-| 📊 **Théories économiques comparées**                | BA2                           | Université Paris I Panthéon-Sorbonne            |
-| 🏭 **Industrial Organization**                       | MiM1                          | IONIS Group                                     |
-| 🎭 **Econ & Sociology of Cultural Industries**       | MiM1                          | IONIS Group                                     |
+| Course | Level | Institution |
+| :--- | :--- | :--- |
+| **Microéconomie I** | BA1 | Université Paris Cité |
 
-### Academic Year 2023/2024
 
-| Course                                              | Level                         | Institution                                    |
-|:----------------------------------------------------|:------------------------------|:-----------------------------------------------|
-| 🏭 **Industrial Organization**                       | MiM1                          | IONIS Group                                     |
-| 🎭 **Econ & Sociology of Cultural Industries**       | MiM1                          | IONIS Group                                     |
+### Past Experience
+
+### Current Year (2024–2025)
+
+| Course | Level | Institution |
+| :--- | :--- | :--- |
+| **Macroéconomie** | BA1 | Université Paris 1 Panthéon-Sorbonne |
+| **Histoire de la pensée économique** | BA3 | Université Paris 1 Panthéon-Sorbonne |
+| **Théories économiques comparées** | BA2 | Université Paris 1 Panthéon-Sorbonne |
+| **Industrial Organization** | MiM1 | IONIS Group |
+| **Econ & Sociology of Cultural Industries** | MiM1 | IONIS Group |
+
+#### 2023–2024
+| Course | Level | Institution |
+| :--- | :--- | :--- |
+| **Industrial Organization** | MiM1 | IONIS Group |
+| **Econ & Sociology of Cultural Industries** | MiM1 | IONIS Group |
