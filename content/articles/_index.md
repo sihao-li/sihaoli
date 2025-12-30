@@ -27,6 +27,17 @@ Si Hao Li, Anne Plunket and Felipe Starosta de Waldemar<br>
 Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li<br>
 **__News!__** Conditionally accepted at *Venture Capital*, 2025<br>
 
+> <span style="color: #008080">Fast Estimation of BLP Demand with Automatic Differentiation</span><br>
+Si Hao Li<br>
+**__New__** Working Paper, 2025<br>
+
+<details>
+  <summary><strong>Abstract</strong></summary>
+  <div style="text-align: justify; line-height: 1.2; margin-top: .5em;">
+    The Berry, Levinsohn, and Pakes (1995) model is a workhorse of empirical industrial organization, but GMM estimation is often bottlenecked by repeated share evaluation and fixed-point inversion on CPUs. We implement the demand-side BLP pipeline in JAX to exploit GPU execution with just-in-time compilation and automatic differentiation. On PyBLP-simulated benchmark economies, our implementation reproduces PyBLP estimates on identical markets and delivers large speedups in share computation that grow with the number of simulation draws, products, and markets.
+  </div>
+</details>
+
 > <span style="color: #008080">[What are economists telling us in the top 5 ? A Structural Topic Models approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043)</span><br>
 Si Hao Li<br>
 Working paper, 2025<br>
