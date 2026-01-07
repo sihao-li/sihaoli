@@ -49,9 +49,6 @@ Si Hao Li<br>
 Si Hao Li<br>
 Working paper, 2025<br>
 **[Data](https://github.com/sihao-li/Top-Five-journal-of-economics)**
-> <span style="color: #008080">Fast Estimation of BLP Demand with Automatic Differentiation</span><br>
-Si Hao Li<br>
-**__New__** Working Paper, 2025<br>
 
 <details>
   <summary><strong>Abstract</strong></summary>
@@ -66,7 +63,7 @@ Si Hao Li<br>
 Si Hao LI, Martin Delville<br>
 Work in progress, 2025<br>
 
-> <span style="color: #008080"> Mobile Money, interoperability and competition</span><br>
+> <span style="color: #008080"> Mobile Money, Interoperability and Competition</span><br>
 Marc Bourreau, Lukasz Grzybowski, Si Hao Li<br>
 Work in progress, 2025<br>
 
