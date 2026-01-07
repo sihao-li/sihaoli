@@ -3,29 +3,20 @@ title: "Teaching"
 description: "Overview of courses taught at undergraduate and graduate levels."
 ---
 
-Here is an overview of my teaching experience in Economics and Social Sciences.
+### Current year (2026–2027)
 
-### Current Year (2024–2025)
+**Université Paris Cité**
+* **Microéconomie I** — Licence 1 (BA1)
 
-| Course | Level | Institution |
-| :--- | :--- | :--- |
-| **Microéconomie I** | BA1 | Université Paris Cité |
+---
 
+### Past experiences
 
-### Past Experience
+**Université Paris 1 Panthéon-Sorbonne**
+* **Histoire de la pensée économique** — Licence 3 (BA3)
+* **Théories économiques comparées** — Licence 2 (BA2)
+* **Macroéconomie** — Licence 1 (BA1)
 
-### Current Year (2024–2025)
-
-| Course | Level | Institution |
-| :--- | :--- | :--- |
-| **Macroéconomie** | BA1 | Université Paris 1 Panthéon-Sorbonne |
-| **Histoire de la pensée économique** | BA3 | Université Paris 1 Panthéon-Sorbonne |
-| **Théories économiques comparées** | BA2 | Université Paris 1 Panthéon-Sorbonne |
-| **Industrial Organization** | MiM1 | IONIS Group |
-| **Econ & Sociology of Cultural Industries** | MiM1 | IONIS Group |
-
-#### 2023–2024
-| Course | Level | Institution |
-| :--- | :--- | :--- |
-| **Industrial Organization** | MiM1 | IONIS Group |
-| **Econ & Sociology of Cultural Industries** | MiM1 | IONIS Group |
+**IONIS Group**
+* **Industrial Organization** — Master 1 (MiM1)
+* **Economics & Sociology of Cultural Industries** — Master 1 (MiM1)

@@ -10,7 +10,7 @@ hidemeta: true
 > </span><br>
 > &emsp; Supervised by Marc Bourreau and Lukasz Grzybowski
 
-### --------------- Working Paper / Work in progress
+### --------------- Working Paper
 
 > <span style="color: #008080">Co-invention and knowledge transfer in science-industry collaboration : Evidence on Recombinant Novelty</span><br>
 Si Hao Li, Anne Plunket and Felipe Starosta de Waldemar<br>
@@ -27,6 +27,13 @@ Si Hao Li, Anne Plunket and Felipe Starosta de Waldemar<br>
 Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li<br>
 **__News!__** Conditionally accepted at *Venture Capital*, 2025<br>
 
+<details>
+  <summary><strong>Abstract</strong></summary>
+  <div style="text-align: justify; line-height: 1.2; margin-top: .5em;">
+    Professional esports teams increasingly rely on venture capital (VC) to fund their growth. However, the structural dynamics of this financing model and its financial viability remain underexplored. Anchored in signaling theory, this qualitative study based on seven interviews with esports team representatives and esports investors investigates the structuration of fundraising deals within professional esports teams, analyzing its stages and allocation of funds. It highlights that VC funding is often preceded by early-stage financing, such as business angels and Series A or B rounds, serving as legitimacy signals and used as a cyclical resource for specific projects like international expansion or player acquisitions. Interviews with team executives indicate that fundraising is critical for survival and project acceleration but does not lead to a viable income stream. Challenges include esports' fluctuating market appeal, limited investor understanding of the industry, and difficulties in monetization. However, emerging opportunities lie in leveraging fan communities, exploring cryptocurrency integration, and artificial intelligence applications. The findings deepen the understanding of VC structuration in esports, identifying adaptability and balancing current growth with financial viability as key success factors. Offering practical insights, this study underscores the need for innovative, viable business models to navigate the complexities of the esports ecosystem.
+  </div>
+</details>
+
 > <span style="color: #008080">Fast Estimation of BLP Demand with Automatic Differentiation</span><br>
 Si Hao Li<br>
 **__New__** Working Paper, 2025<br>
@@ -42,10 +49,27 @@ Si Hao Li<br>
 Si Hao Li<br>
 Working paper, 2025<br>
 **[Data](https://github.com/sihao-li/Top-Five-journal-of-economics)**
+> <span style="color: #008080">Fast Estimation of BLP Demand with Automatic Differentiation</span><br>
+Si Hao Li<br>
+**__New__** Working Paper, 2025<br>
 
-> <span style="color: #008080">Second-Degree Price Discrimination in Digital Goods: Grey Markets and Conflict</span><br>
+<details>
+  <summary><strong>Abstract</strong></summary>
+  <div style="text-align: justify; line-height: 1.2; margin-top: .5em;">
+    This article examines the evolution of research topics published in top five economics journals using advanced textual analysis methods. We implemented Structural Topic Model (Roberts et al., 2014) on our database of articles from the top five journals, which we constructed using web scraping techniques from the RePEc platform. Our findings indicate that economics has evolved, with an increasing resurgence of empirical methods and a significant decline in theory, particularly in general equilibrium.
+  </div>
+</details>
+
+### ---------------  Work in progress
+
+> <span style="color: #008080"> Second-Degree Price Discrimination in Digital Goods: Grey Markets and Conflict</span><br>
 Si Hao LI, Martin Delville<br>
 Work in progress, 2025<br>
+
+> <span style="color: #008080"> Mobile Money, interoperability and competition</span><br>
+Marc Bourreau, Lukasz Grzybowski, Si Hao Li<br>
+Work in progress, 2025<br>
+
 
 ### --------------- Master thesis
 
