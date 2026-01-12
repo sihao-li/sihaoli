@@ -20,7 +20,7 @@ markup: html
     <article class="pub-card">
       <p class="pub-title">Co-invention and knowledge transfer in science-industry collaboration: Evidence on Recombinant Novelty</p>
       <p class="pub-authors">Si Hao Li, Anne Plunket and Felipe Starosta de Waldemar</p>
-      <p class="pub-status"><span class="pub-badge">News</span> Accepted for presentation at the 8th Geography of Innovation Conference, 2025</p>
+      <p class="pub-status"><span class="pub-badge">Working Paper</span> Accepted for presentation at the 8th Geography of Innovation Conference, 2025</p>
       <details class="pub-abstract">
         <summary>Abstract</summary>
         <p>We study how science–industry collaborations foster technological novelty at the inventor level. Using French patent data (1976–2013), we measure recombinant novelty as the creation of new IPC-class combinations and estimate causal effects through a dynamic difference-in-differences design. A first co-invention with a scientific partner substantially raises the probability of recombinant novelty, especially immediately after collaboration, consistent with tacit knowledge transfer through learning-by-doing. Network embeddedness conditions this effect: clustered and constrained positions dampen novelty, whereas more open networks enhance it. Geographical proximity plays a weaker role, with collaborations at distance generating comparable outcomes. Finally, technological context matters: inventors embedded in environments with higher revealed technological advantage display stronger and more persistent gains from collaboration. These findings highlight the catalytic role of science–industry partnerships in opening new technological trajectories, while showing that their impact depends less on geography than on inventors’ network structure and the absorptive capacity of their technological environment.</p>
@@ -50,7 +50,7 @@ markup: html
     <article class="pub-card">
       <p class="pub-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5011043">What are economists telling us in the top 5? A Structural Topic Models approach</a></p>
       <p class="pub-authors">Si Hao Li</p>
-      <p class="pub-status">Working paper, 2025</p>
+      <p class="pub-status"><span class="pub-badge">Working Paper</span> 2025</p>
       <p class="pub-links"><a href="https://github.com/sihao-li/Top-Five-journal-of-economics">Data</a></p>
       <details class="pub-abstract">
         <summary>Abstract</summary>
