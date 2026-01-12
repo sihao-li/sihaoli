@@ -2,6 +2,7 @@
 title: "Publications"
 description: "Articles and preprints."
 hidemeta: true
+markup: html
 ---
 
 <div class="publications">
