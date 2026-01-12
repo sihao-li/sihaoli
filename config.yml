@@ -31,6 +31,9 @@ menu:
         - name: Tutorials and Data
           url: publications/
           weight : 6
+        - name: Data Visualization
+          url: dataviz/
+          weight: 7
 
 params:
     description: "PhD candidate in Economics at Telecom Paris (CREST). My research interests span Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science. Contact: si.li@ip-paris.fr | si-hao.li@ensae.fr."
@@ -78,6 +81,8 @@ params:
               url: past/
             - name: Tutorials and Data
               url: publications/
+            - name: Data Visualization
+              url: dataviz/
     socialIcons:
         # - name: hal
         #   url: https://hal.science/search/index/?q=*&authIdPerson_i=1215683
