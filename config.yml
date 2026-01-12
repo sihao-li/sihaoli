@@ -33,7 +33,7 @@ menu:
           weight : 6
 
 params:
-    description: "Phd candidate in Economics at Telecom Paris (CREST). My research interests lie at the intersection of Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science."
+    description: "PhD candidate in Economics at Telecom Paris (CREST). My research interests span Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science. Contact: si.li@ip-paris.fr | si-hao.li@ensae.fr."
     author: Si Hao Li
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "02 Jan 2006"
@@ -58,7 +58,7 @@ params:
     profileMode:
           enabled: true
           title: Si Hao Li
-          subtitle: "Phd candidate in Economics at Telecom Paris (CREST). My research interests lie at the intersection of Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science."
+          subtitle: "PhD candidate in Economics at Telecom Paris (CREST). My research interests span Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science.<br />Contact: si.li@ip-paris.fr | si-hao.li@ensae.fr."
           imageUrl: "photo3.png"
           imageWidth: 160
           imageHeight: 160
@@ -104,7 +104,7 @@ params:
         - name: Twitter
           url: https://x.com/SihaoLS
         - name: Email
-          url: si.li@ip-paris.fr
+          url: mailto:si.li@ip-paris.fr
 
     assets:
         disableHLJS: true
