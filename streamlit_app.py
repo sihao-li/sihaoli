@@ -7,11 +7,11 @@ import streamlit as st
 import plotly.express as px
 
 # =========================
-# CONFIG
+# CONFIGURATION
 # =========================
 
 st.set_page_config(
-    page_title="Top-5 Economics Journals viz",
+    page_title="Top-5 Economics Journals – Textual Trends",
     layout="wide",
 )
 
@@ -100,15 +100,15 @@ def compute_frequency(df: pd.DataFrame, mode: str, terms: list[str]) -> pd.DataF
 
 
 # =========================
-# UI
+# USER INTERFACE
 # =========================
 
-st.title("📈 Mini-Gallicagram (Top-5 Economics Journals)")
+st.title("📈 Textual Trends in Top-5 Economics Journals")
 
 raw_df = load_data(DATA_PATH)
 
 if raw_df.empty:
-    st.error("Fichier CSV introuvable ou vide.")
+    st.error("CSV file not found or empty.")
     st.stop()
 
 df = prepare_data(raw_df)
@@ -117,16 +117,16 @@ df = prepare_data(raw_df)
 # SIDEBAR
 # -------------------------
 
-st.sidebar.header("Recherche")
+st.sidebar.header("Search")
 
 query = st.sidebar.text_input(
-    "Mot(s)",
-    value="liberté",
-    help="Utiliser '&' pour ET, '+' pour OU",
+    "Word(s)",
+    value="theory",
+    help="Use '&' for AND, '+' for OR",
 )
 
 smooth = st.sidebar.slider(
-    "Lissage (années)",
+    "Smoothing window (years)",
     0, 12, 2,
 )
 
@@ -134,7 +134,7 @@ year_min = int(df["year"].min())
 year_max = int(df["year"].max())
 
 year_range = st.sidebar.slider(
-    "Période",
+    "Time period",
     year_min,
     year_max,
     (year_min, year_max),
@@ -142,7 +142,7 @@ year_range = st.sidebar.slider(
 
 journal_options = sorted(df["journal"].dropna().unique())
 selected_journals = st.sidebar.multiselect(
-    "Journaux",
+    "Journals",
     journal_options,
     default=journal_options,
 )
@@ -158,7 +158,7 @@ df_filt = df[
 ]
 
 if not query.strip():
-    st.info("Entrez un mot pour lancer la recherche.")
+    st.info("Please enter a search term.")
     st.stop()
 
 mode, terms = parse_query(query)
@@ -166,7 +166,7 @@ mode, terms = parse_query(query)
 freq_df = compute_frequency(df_filt, mode, terms)
 
 if freq_df.empty:
-    st.warning("Aucun résultat.")
+    st.warning("No results found.")
     st.stop()
 
 if smooth > 0:
@@ -184,12 +184,12 @@ fig = px.line(
     freq_df,
     x="year",
     y="frequency",
-    title=f"Fréquence de « {query} »",
+    title=f"Relative frequency of “{query}” over time",
 )
 
 fig.update_layout(
-    xaxis_title="Année",
-    yaxis_title="Fréquence dans le corpus",
+    xaxis_title="Year",
+    yaxis_title="Frequency in the corpus",
     height=500,
 )
 
@@ -199,7 +199,7 @@ st.plotly_chart(fig, use_container_width=True)
 # CONTEXT / DOCUMENTS
 # =========================
 
-st.subheader("📄 Documents correspondants")
+st.subheader("📄 Matching documents")
 
 if mode == "SINGLE":
     mask = df_filt["text"].str.contains(terms[0], regex=False)
@@ -220,4 +220,4 @@ results_df = (
 
 st.dataframe(results_df, use_container_width=True)
 
-st.caption(f"{len(results_df)} documents trouvés")
+st.caption(f"{len(results_df)} matching documents")
