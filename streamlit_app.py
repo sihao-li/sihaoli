@@ -11,9 +11,10 @@ import plotly.express as px
 # =========================
 
 st.set_page_config(
-    page_title="Top-5 Economics Journals – Textual Trends",
     layout="wide",
+    initial_sidebar_state="collapsed"
 )
+
 
 DATA_PATH = Path(__file__).parent / "data_top5_without_v3.csv"
 
@@ -103,7 +104,7 @@ def compute_frequency(df: pd.DataFrame, mode: str, terms: list[str]) -> pd.DataF
 # USER INTERFACE
 # =========================
 
-st.title("📈 Textual Trends in Top-5 Economics Journals")
+st.markdown("### Textual trends")
 
 raw_df = load_data(DATA_PATH)
 
