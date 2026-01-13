@@ -31,7 +31,7 @@ menu:
         - name: Tutorials and Data
           url: publications/
           weight : 6
-        - name: NLP Data Viz
+        - name: Data Viz - Top 5 Econ
           url: dataviz/
           weight: 7
 
@@ -81,7 +81,7 @@ params:
               url: past/
             - name: Tutorials and Data
               url: publications/
-            - name: NLP Data Viz
+            - name: Data Viz - Top 5 Econ
               url: dataviz/
     socialIcons:
         # - name: hal
