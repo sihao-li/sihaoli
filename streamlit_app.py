@@ -3,6 +3,7 @@ import importlib.util
 import re
 from collections import Counter
 from pathlib import Path
+from typing import TYPE_CHECKING, Any
 
 import numpy as np
 import pandas as pd
@@ -26,6 +27,11 @@ HAS_PLOTLY_EVENTS = importlib.util.find_spec("streamlit_plotly_events") is not N
 
 if HAS_SENTENCE_TRANSFORMERS:
     from sentence_transformers import SentenceTransformer
+elif TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
+else:
+    SentenceTransformer = Any
+=======
 
 if HAS_BERTOPIC:
     from bertopic import BERTopic
