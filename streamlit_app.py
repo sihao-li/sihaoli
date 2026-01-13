@@ -31,6 +31,7 @@ elif TYPE_CHECKING:
     from sentence_transformers import SentenceTransformer
 else:
     SentenceTransformer = Any
+=======
 
 if HAS_BERTOPIC:
     from bertopic import BERTopic
