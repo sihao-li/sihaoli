@@ -1,6 +1,7 @@
 ---
 title: "NLP Data Visualization"
-
+date: 2026-01-14
+draft: false
 ---
 
 Cette page intègre l'application Streamlit de visualisation NLP. Lancez l'app en local avec :
