@@ -17,7 +17,6 @@ st.set_page_config(
     page_icon="📊",
 )
 
-
 DATA_PATH = Path(__file__).parent / "data_top5_without_v3.csv"
 
 # =========================
@@ -28,8 +27,7 @@ DATA_PATH = Path(__file__).parent / "data_top5_without_v3.csv"
 def load_data(path: Path) -> pd.DataFrame:
     if not path.exists():
         return pd.DataFrame()
-    df = pd.read_csv(path)
-    return df
+    return pd.read_csv(path)
 
 
 @st.cache_data
@@ -44,10 +42,9 @@ def prepare_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.dropna(subset=["year"])
     df["year"] = df["year"].astype(int)
 
-    df["text"] = (
-        df["title"].fillna("") + " " + df["abstract"].fillna("")
-    ).str.lower()
+    df["text"] = (df["title"].fillna("") + " " + df["abstract"].fillna("")).str.lower()
 
+    # words (>= 2 letters) – keeps French accents
     df["tokens"] = df["text"].apply(
         lambda x: re.findall(r"\b[a-zàâéèêîôûç]{2,}\b", x)
     )
@@ -56,24 +53,52 @@ def prepare_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # =========================
-# QUERY PARSING (Gallicagram-style)
+# QUERY PARSING
 # =========================
 
 def parse_query(query: str):
-    query = query.strip().lower()
-    if "&" in query:
-        return "AND", [q.strip() for q in query.split("&")]
-    if "+" in query:
-        return "OR", [q.strip() for q in query.split("+")]
-    return "SINGLE", [query]
+    """
+    - "term"            -> SINGLE
+    - "a + b + c"       -> OR
+    - "a & b & c"       -> PHRASE (sequence) (see compute_frequency)
+    """
+    q = query.strip().lower()
+
+    if "&" in q:
+        terms = [t.strip() for t in q.split("&") if t.strip()]
+        return "PHRASE", terms
+
+    if "+" in q:
+        terms = [t.strip() for t in q.split("+") if t.strip()]
+        return "OR", terms
+
+    return "SINGLE", [q]
 
 
 # =========================
 # FREQUENCY COMPUTATION
 # =========================
 
+def count_phrase_occurrences(tokens: list[str], phrase: list[str]) -> int:
+    """Count occurrences of a token sequence (phrase) inside a token list."""
+    n = len(phrase)
+    if n == 0 or len(tokens) < n:
+        return 0
+    return sum(1 for i in range(len(tokens) - n + 1) if tokens[i:i+n] == phrase)
+
+
 def compute_frequency(df: pd.DataFrame, mode: str, terms: list[str]) -> pd.DataFrame:
+    """
+    Returns yearly frequency as:
+      occurrences / total_words_in_year
+
+    - SINGLE: counts exact token matches of terms[0]
+    - OR: counts tokens that are exactly any of the terms
+    - PHRASE (from "&"): counts occurrences of the exact token sequence terms
+    """
     rows = []
+    term0 = terms[0] if terms else ""
+    termset = set(terms)
 
     for year, g in df.groupby("year"):
         total_words = sum(len(tokens) for tokens in g["tokens"])
@@ -82,29 +107,22 @@ def compute_frequency(df: pd.DataFrame, mode: str, terms: list[str]) -> pd.DataF
 
         count = 0
 
-        for tokens in g["tokens"]:
-            token_list = tokens
+        if mode == "SINGLE":
+            for tokens in g["tokens"]:
+                count += sum(1 for t in tokens if t == term0)
 
-            if mode == "SINGLE":
-                count += sum(1 for t in token_list if t == terms[0])
+        elif mode == "OR":
+            for tokens in g["tokens"]:
+                count += sum(1 for t in tokens if t in termset)
 
-            elif mode == "AND":
-                count += sum(
-                    1 for t in token_list
-                    if all(term == t for term in terms)
-                )
-
-            elif mode == "OR":
-                count += sum(
-                    1 for t in token_list
-                    if any(term == t for term in terms)
-                )
+        else:  # PHRASE
+            for tokens in g["tokens"]:
+                count += count_phrase_occurrences(tokens, terms)
 
         freq = count / total_words
-        rows.append({"year": year, "frequency": freq})
+        rows.append({"year": int(year), "frequency": freq})
 
     return pd.DataFrame(rows).sort_values("year")
-
 
 
 # =========================
@@ -175,7 +193,6 @@ st.markdown(
 )
 
 raw_df = load_data(DATA_PATH)
-
 if raw_df.empty:
     st.error("CSV file not found or empty.")
     st.stop()
@@ -192,59 +209,49 @@ st.sidebar.caption("Find trends in titles and abstracts.")
 query = st.sidebar.text_input(
     "Word(s)",
     value="theory",
-    help="Use '&' for AND, '+' for OR",
+    help="Use '+' for OR (e.g., labor + market). Use '&' for a phrase (e.g., labor & market).",
 )
 
 with st.sidebar.expander("Advanced filters", expanded=True):
-    smooth = st.slider(
-        "Smoothing window (years)",
-        0, 12, 2,
-    )
+    smooth = st.slider("Smoothing window (years)", 0, 12, 2)
 
     year_min = int(df["year"].min())
     year_max = int(df["year"].max())
 
-    year_range = st.slider(
-        "Time period",
-        year_min,
-        year_max,
-        (year_min, year_max),
-    )
+    year_range = st.slider("Time period", year_min, year_max, (year_min, year_max))
 
     journal_options = sorted(df["journal"].dropna().unique())
-    selected_journals = st.multiselect(
-        "Journals",
-        journal_options,
-        default=journal_options,
-    )
+    selected_journals = st.multiselect("Journals", journal_options, default=journal_options)
 
 # -------------------------
 # FILTER DATA
 # -------------------------
 
 df_filt = df[
-    (df["year"] >= year_range[0]) &
-    (df["year"] <= year_range[1]) &
-    (df["journal"].isin(selected_journals))
+    (df["year"] >= year_range[0])
+    & (df["year"] <= year_range[1])
+    & (df["journal"].isin(selected_journals))
 ]
 
 if not query.strip():
     st.info("Please enter a search term.")
     st.stop()
 
+# (Recommended) stop 1-letter queries to avoid misleading stuff
+if len(query.strip()) < 2:
+    st.warning("Please enter a full word (at least 2 letters).")
+    st.stop()
+
 mode, terms = parse_query(query)
 
 freq_df = compute_frequency(df_filt, mode, terms)
-
 if freq_df.empty:
     st.warning("No results found.")
     st.stop()
 
 if smooth > 0:
     freq_df["frequency"] = (
-        freq_df["frequency"]
-        .rolling(smooth, center=True, min_periods=1)
-        .mean()
+        freq_df["frequency"].rolling(smooth, center=True, min_periods=1).mean()
     )
 
 # =========================
@@ -286,17 +293,24 @@ st.markdown("<div class='section-title'>Textual trends</div>", unsafe_allow_html
 # PLOT
 # =========================
 
+if mode == "SINGLE":
+    title = f"Share of words equal to “{query}” over time"
+elif mode == "OR":
+    title = f"Share of words equal to any of: {', '.join([f'“{t}”' for t in terms])}"
+else:
+    title = f"Share of phrase occurrences: “{' '.join(terms)}” over time"
+
 fig = px.line(
     freq_df,
     x="year",
     y="frequency",
-    title=f"Relative frequency of “{query}” over time",
+    title=title,
     markers=True,
 )
 
 fig.update_layout(
     xaxis_title="Year",
-    yaxis_title="Frequency in the corpus",
+    yaxis_title="Share in the corpus (exact match)",
     height=500,
     template="plotly_white",
 )
@@ -304,6 +318,10 @@ fig.update_layout(
 fig.update_traces(line=dict(color="#2563eb", width=3), marker=dict(size=6))
 
 st.plotly_chart(fig, use_container_width=True)
+
+st.caption(
+    "Metric: per year, (number of exact matches in titles+abstracts) / (total number of words in that year)."
+)
 
 # =========================
 # CONTEXT / DOCUMENTS
@@ -313,15 +331,12 @@ st.subheader("📄 Matching documents")
 st.caption("Sorted chronologically for fast scanning.")
 
 if mode == "SINGLE":
-    mask = df_filt["text"].str.contains(terms[0], regex=False)
-elif mode == "AND":
-    mask = df_filt["text"].apply(
-        lambda x: all(term in x for term in terms)
-    )
-else:  # OR
-    mask = df_filt["text"].apply(
-        lambda x: any(term in x for term in terms)
-    )
+    mask = df_filt["tokens"].apply(lambda toks: terms[0] in toks)
+elif mode == "OR":
+    tset = set(terms)
+    mask = df_filt["tokens"].apply(lambda toks: any(t in tset for t in toks))
+else:  # PHRASE
+    mask = df_filt["tokens"].apply(lambda toks: count_phrase_occurrences(toks, terms) > 0)
 
 results_df = (
     df_filt.loc[mask, ["title", "year", "journal"]]
@@ -330,5 +345,4 @@ results_df = (
 )
 
 st.dataframe(results_df, use_container_width=True, height=420)
-
 st.caption(f"{len(results_df)} matching documents")
