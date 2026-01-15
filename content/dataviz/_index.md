@@ -7,7 +7,7 @@ draft: false
 <style>
   .dataviz-hero {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #334155 100%);
-    color: #f8fafc;
+    color: #008080;
     padding: 2rem 2.5rem;
     border-radius: 18px;
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
@@ -54,40 +54,33 @@ draft: false
 
 <div class="dataviz-hero">
   <h1>Data Viz • Top 5 Econ</h1>
-  <p>Analysez l’évolution des thèmes dans les revues économiques de référence, avec un accès rapide à la visualisation.</p>
+  <p>Analyze the evolution of topics in leading economic journals, with quick access to visualization.</p>
 </div>
 
 <div class="dataviz-cards">
   <div class="dataviz-card">
-    <h3>📌 Ce que vous pouvez faire</h3>
-    <p>Suivre la fréquence d’un terme, comparer des périodes, filtrer par revue.</p>
+    <h3>📌 What you can do</h3>
+    <p>Track the frequency of a term, compare periods, filter by journal.</p>
   </div>
   <div class="dataviz-card">
-    <h3>⚡ Navigation rapide</h3>
-    <p>Gardez l’iframe ouverte, affinez vos requêtes, visualisez les documents associés.</p>
+    <h3>⚡ Quick navigation</h3>
+    <p>Keep the iframe open, refine your queries, view related documents.</p>
   </div>
   <div class="dataviz-card">
-    <h3>🔎 Exemples de requêtes</h3>
+    <h3>🔎 Examples of queries</h3>
     <p><strong>innovation</strong>, <strong>digital &amp; platform</strong>, <strong>climate + carbon</strong>.</p>
   </div>
 </div>
 
 <div class="dataviz-callout">
-  <strong>Astuce :</strong> utilisez <code>&amp;</code> pour un filtre <em>AND</em> et <code>+</code> pour un filtre <em>OR</em> directement dans l’application.
+  <strong>Tip :</strong> use <code>&amp;</code> for a filter <em>AND</em> and <code>+</code> for a filter <em>OR</em> directly in the application.
 </div>
 
-Cette page intègre l'application Streamlit de visualisation NLP. Lancez l'app en local avec :
-
-```bash
-streamlit run streamlit_app.py
-```
-
-Si l'application tourne déjà, elle s'affiche ci-dessous :
+This interactive tool visualizes the relative frequency of terms in article
+titles and abstracts published in top-five economics journals over time.
 
 <iframe
   src="http://localhost:8501"
   title="NLP Data Visualization"
   style="width: 100%; height: 900px; border: 1px solid #e2e8f0; border-radius: 8px;"
 ></iframe>
-
-<p><em>Astuce :</em> pour la production, remplacez l'URL de l'iframe par celle de l'app Streamlit déployée.</p>
