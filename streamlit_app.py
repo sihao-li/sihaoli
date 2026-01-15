@@ -12,7 +12,9 @@ import plotly.express as px
 
 st.set_page_config(
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded",
+    page_title="Data Viz Top 5",
+    page_icon="📊",
 )
 
 
@@ -104,7 +106,68 @@ def compute_frequency(df: pd.DataFrame, mode: str, terms: list[str]) -> pd.DataF
 # USER INTERFACE
 # =========================
 
-st.markdown("### Textual trends")
+st.markdown(
+    """
+    <style>
+        .app-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #f8fafc;
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.25);
+        }
+        .app-header h1 {
+            font-size: 2.4rem;
+            margin: 0;
+        }
+        .app-header p {
+            margin: 0.35rem 0 0;
+            color: #e2e8f0;
+            font-size: 1.05rem;
+        }
+        .metric-card {
+            background: #ffffff;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        }
+        .metric-title {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.2rem;
+        }
+        .metric-value {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-top: 1rem;
+        }
+        .stDataFrame {
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+    <div class="app-header">
+        <h1>📊 Data Viz Top 5</h1>
+        <p>Explore how topics evolve in top economics journals with a clean, fast, and focused interface.</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 raw_df = load_data(DATA_PATH)
 
@@ -119,6 +182,7 @@ df = prepare_data(raw_df)
 # -------------------------
 
 st.sidebar.header("Search")
+st.sidebar.caption("Find trends in titles and abstracts.")
 
 query = st.sidebar.text_input(
     "Word(s)",
@@ -126,27 +190,28 @@ query = st.sidebar.text_input(
     help="Use '&' for AND, '+' for OR",
 )
 
-smooth = st.sidebar.slider(
-    "Smoothing window (years)",
-    0, 12, 2,
-)
+with st.sidebar.expander("Advanced filters", expanded=True):
+    smooth = st.slider(
+        "Smoothing window (years)",
+        0, 12, 2,
+    )
 
-year_min = int(df["year"].min())
-year_max = int(df["year"].max())
+    year_min = int(df["year"].min())
+    year_max = int(df["year"].max())
 
-year_range = st.sidebar.slider(
-    "Time period",
-    year_min,
-    year_max,
-    (year_min, year_max),
-)
+    year_range = st.slider(
+        "Time period",
+        year_min,
+        year_max,
+        (year_min, year_max),
+    )
 
-journal_options = sorted(df["journal"].dropna().unique())
-selected_journals = st.sidebar.multiselect(
-    "Journals",
-    journal_options,
-    default=journal_options,
-)
+    journal_options = sorted(df["journal"].dropna().unique())
+    selected_journals = st.multiselect(
+        "Journals",
+        journal_options,
+        default=journal_options,
+    )
 
 # -------------------------
 # FILTER DATA
@@ -178,6 +243,41 @@ if smooth > 0:
     )
 
 # =========================
+# TOP METRICS
+# =========================
+
+summary_cols = st.columns(3)
+summary_cols[0].markdown(
+    f"""
+    <div class="metric-card">
+        <div class="metric-title">Articles in dataset</div>
+        <div class="metric-value">{len(df):,}</div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+summary_cols[1].markdown(
+    f"""
+    <div class="metric-card">
+        <div class="metric-title">Years covered</div>
+        <div class="metric-value">{year_min} - {year_max}</div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+summary_cols[2].markdown(
+    f"""
+    <div class="metric-card">
+        <div class="metric-title">Journals tracked</div>
+        <div class="metric-value">{len(journal_options)}</div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown("<div class='section-title'>Textual trends</div>", unsafe_allow_html=True)
+
+# =========================
 # PLOT
 # =========================
 
@@ -186,13 +286,17 @@ fig = px.line(
     x="year",
     y="frequency",
     title=f"Relative frequency of “{query}” over time",
+    markers=True,
 )
 
 fig.update_layout(
     xaxis_title="Year",
     yaxis_title="Frequency in the corpus",
     height=500,
+    template="plotly_white",
 )
+
+fig.update_traces(line=dict(color="#2563eb", width=3), marker=dict(size=6))
 
 st.plotly_chart(fig, use_container_width=True)
 
@@ -201,6 +305,7 @@ st.plotly_chart(fig, use_container_width=True)
 # =========================
 
 st.subheader("📄 Matching documents")
+st.caption("Sorted chronologically for fast scanning.")
 
 if mode == "SINGLE":
     mask = df_filt["text"].str.contains(terms[0], regex=False)
@@ -219,6 +324,6 @@ results_df = (
     .reset_index(drop=True)
 )
 
-st.dataframe(results_df, use_container_width=True)
+st.dataframe(results_df, use_container_width=True, height=420)
 
 st.caption(f"{len(results_df)} matching documents")
