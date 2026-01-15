@@ -76,30 +76,35 @@ def compute_frequency(df: pd.DataFrame, mode: str, terms: list[str]) -> pd.DataF
     rows = []
 
     for year, g in df.groupby("year"):
-        total_words = sum(len(t) for t in g["tokens"])
+        total_words = sum(len(tokens) for tokens in g["tokens"])
         if total_words == 0:
             continue
 
         count = 0
 
         for tokens in g["tokens"]:
-            token_text = " ".join(tokens)
+            token_list = tokens
 
             if mode == "SINGLE":
-                count += token_text.count(terms[0])
+                count += sum(1 for t in token_list if t == terms[0])
 
             elif mode == "AND":
-                if all(term in token_text for term in terms):
-                    count += 1
+                count += sum(
+                    1 for t in token_list
+                    if all(term == t for term in terms)
+                )
 
             elif mode == "OR":
-                if any(term in token_text for term in terms):
-                    count += 1
+                count += sum(
+                    1 for t in token_list
+                    if any(term == t for term in terms)
+                )
 
         freq = count / total_words
         rows.append({"year": year, "frequency": freq})
 
     return pd.DataFrame(rows).sort_values("year")
+
 
 
 # =========================
