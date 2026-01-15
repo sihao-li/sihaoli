@@ -7,7 +7,7 @@ draft: false
 <style>
   .dataviz-hero {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #334155 100%);
-    color: #008080;
+    color: #f8fafc;
     padding: 2rem 2.5rem;
     border-radius: 18px;
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
@@ -19,7 +19,7 @@ draft: false
   }
   .dataviz-hero p {
     margin: 0.5rem 0 0;
-    color: #e2e8f0;
+    color: #cbd5e1;
   }
   .dataviz-cards {
     display: grid;
@@ -80,7 +80,7 @@ This interactive tool visualizes the relative frequency of terms in article
 titles and abstracts published in top-five economics journals over time.
 
 <iframe
-  src="http://localhost:8501"
+  src="https://sihaoli-8h8yz7qxbb3bnj2x2nwhne.streamlit.app/?embed=true"
   title="NLP Data Visualization"
   style="width: 100%; height: 900px; border: 1px solid #e2e8f0; border-radius: 8px;"
 ></iframe>
