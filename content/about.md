@@ -7,7 +7,7 @@ markup: html
 
 <div class="about-page">
   <section class="about-hero">
-    <p class="about-kicker">Economics | Digital Markets | Computational Methods</p>
+    <p class="about-kicker"> Industrial Organization | Digital Economics</p>
     <h2>Hi, I am Si Hao Li.</h2>
     <p class="about-lead">
       I am a PhD candidate in Economics at Telecom Paris (CREST), with research interests in
