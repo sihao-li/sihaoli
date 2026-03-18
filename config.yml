@@ -67,14 +67,14 @@ params:
           imageHeight: 160
           imageTitle: Si Hao Li
           buttons:
+            - name: About
+              url: about/
             - name: Publications
               url: articles/
             - name: Talks
               url: talks/
             - name: Teaching
               url: teaching/
-            - name: About
-              url: about/
             - name: Resume
               url: cv.pdf
             - name: Learning Ressources
