@@ -45,7 +45,8 @@ markup: html
     </p>
     <p style="margin-top: 0.8rem;">
       Beyond research, I am passionate about football and have played since I was a kid.
-      I am an unconditional fan of Chelsea, Didier Drogba, and Eden Hazard.
+      I am an unconditional fan of Chelsea, Didier Drogba, and Eden Hazard, but for my mental
+      health I decided to stop watching Chelsea games in 2025.
     </p>
   </section>
 </div>
