@@ -28,9 +28,7 @@ markup: html
     </p>
     <p style="margin-top: 0.8rem;">
       I had a multidisciplinary French-style academic training, so I am interested in a wide range
-      of methods and topics: qualitative work in institutional economics, management, and sociology,
-      as well as quantitative approaches through computational social science and econometrics.
-      Feel free to contact me to discuss research.
+      of methods and topics. Feel free to contact me to discuss research.
     </p>
   </section>
 
