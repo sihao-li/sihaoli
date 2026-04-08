@@ -22,13 +22,34 @@
 }
 
 .pub-card {
+    position: relative;
     display: grid;
     gap: 0.5rem;
-    padding: 1.25rem;
+    padding: 1.35rem;
     border-radius: 16px;
     background: var(--theme);
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    border: 1px solid rgba(148, 163, 184, 0.24);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    min-height: 190px;
+    padding-right: min(36%, 210px);
+}
+
+.pub-card::after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: min(30%, 175px);
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background:
+        linear-gradient(to top, rgba(15, 118, 110, 0.24) 0 3px, transparent 3px 100%),
+        repeating-linear-gradient(to right, rgba(15, 23, 42, 0.08) 0 1px, transparent 1px 24px),
+        repeating-linear-gradient(to top, rgba(15, 23, 42, 0.08) 0 1px, transparent 1px 24px),
+        linear-gradient(135deg, rgba(204, 251, 241, 0.8), rgba(240, 249, 255, 0.95));
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
 .pub-card:hover {
@@ -77,8 +98,8 @@
 }
 
 .pub-abstract {
-    margin-top: 0.3rem;
-    padding: 0.6rem 0.9rem;
+    margin-top: 0.35rem;
+    padding: 0.75rem 0.95rem;
     border-radius: 12px;
     background: rgba(148, 163, 184, 0.08);
 }
@@ -93,6 +114,19 @@
     margin: 0.6rem 0 0;
     color: var(--secondary);
     line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+    .pub-card {
+        padding-right: 1rem;
+    }
+
+    .pub-card::after {
+        position: static;
+        width: 100%;
+        max-width: 220px;
+        margin-top: 0.5rem;
+    }
 }
 
 @media (max-width: 720px) {
