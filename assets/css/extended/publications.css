@@ -141,10 +141,6 @@
         linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.22));
 }
 
-.pub-media-label {
-    display: none;
-}
-
 @media (max-width: 920px) {
     .pub-card {
         grid-template-columns: 1fr;

@@ -5,12 +5,6 @@ hidemeta: true
 markup: html
 ---
 
-<style>
-  .main {
-    max-width: min(1480px, calc(100vw - 2rem));
-  }
-</style>
-
 <div class="publications">
   <section class="pub-section">
     <h2 class="pub-section-title">PhD Thesis</h2>
@@ -23,7 +17,6 @@ markup: html
         <p class="pub-status">Supervised by Marc Bourreau and Lukasz Grzybowski</p>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Network Competition</figcaption>
       </figure>
     </article>
   </section>
@@ -43,7 +36,6 @@ markup: html
         </details>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Knowledge Flows</figcaption>
       </figure>
     </article>
 
@@ -51,7 +43,7 @@ markup: html
       <div class="pub-paper">
         <p class="pub-kicker">Forthcoming</p>
         <h3 class="pub-title">From angel investors to venture capital: fundraising pathways in professional esports teams</h3>
-        <p class="pub-authors">Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Bérard and Si Hao Li</p>
+        <p class="pub-authors">Florian Lefebvre, Pedro Almeida Couto, Nicolas Scelles, Axel Berard and Si Hao Li</p>
         <p class="pub-status">Forthcoming at <em>Venture Capital</em> (2025)</p>
         <details class="pub-abstract">
           <summary>Abstract</summary>
@@ -59,7 +51,6 @@ markup: html
         </details>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Finance Pathways</figcaption>
       </figure>
     </article>
 
@@ -75,7 +66,6 @@ markup: html
         </details>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Computation Speedups</figcaption>
       </figure>
     </article>
 
@@ -92,7 +82,6 @@ markup: html
         </details>
       </div>
       <figure class="pub-media" style="--pub-image: url('/data1.png');" aria-hidden="true">
-        <figcaption class="pub-media-label">Topic Mapping</figcaption>
       </figure>
     </article>
   </section>
@@ -108,7 +97,6 @@ markup: html
         <p class="pub-status">2025</p>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Pricing Strategies</figcaption>
       </figure>
     </article>
 
@@ -120,7 +108,6 @@ markup: html
         <p class="pub-status">2025</p>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Platform Dynamics</figcaption>
       </figure>
     </article>
   </section>
@@ -140,7 +127,6 @@ markup: html
         </details>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Interoperability Model</figcaption>
       </figure>
     </article>
 
@@ -156,7 +142,6 @@ markup: html
         </details>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">IO Literature</figcaption>
       </figure>
     </article>
   </section>
@@ -172,31 +157,28 @@ markup: html
         <p class="pub-status">2025</p>
       </div>
       <figure class="pub-media" style="--pub-image: url('/genllm.png');" aria-hidden="true">
-        <figcaption class="pub-media-label">LLM Simulation</figcaption>
       </figure>
     </article>
 
     <article class="pub-card">
       <div class="pub-paper">
         <p class="pub-kicker">Journal Article</p>
-        <h3 class="pub-title"><a href="https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-2-page-117">Les clubs amateurs face aux défis du financement: entre inégalités économiques et place croissante du privé</a></h3>
+        <h3 class="pub-title"><a href="https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-2-page-117">Les clubs amateurs face aux defis du financement: entre inegalites economiques et place croissante du prive</a></h3>
         <p class="pub-authors">Antonin Chenard and Si Hao Li</p>
-        <p class="pub-status"><em>Regards croisés sur l'économie</em>, 2024</p>
+        <p class="pub-status"><em>Regards croises sur l'economie</em>, 2024</p>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Sports Economics</figcaption>
       </figure>
     </article>
 
     <article class="pub-card">
       <div class="pub-paper">
         <p class="pub-kicker">Journal Article</p>
-        <h3 class="pub-title"><a href="https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-1-page-111?tab=premieres-lignes">Des innovations financières aux conséquences néfastes?</a></h3>
-        <p class="pub-authors">Jérôme Héricourt, Samuel Ligonnière, Si Hao Li, Olivier Pernet-Coudrier</p>
-        <p class="pub-status"><em>Regards croisés sur l'économie</em>, 2024</p>
+        <h3 class="pub-title"><a href="https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-1-page-111?tab=premieres-lignes">Des innovations financieres aux consequences nefastes?</a></h3>
+        <p class="pub-authors">Jerome Hericourt, Samuel Ligonniere, Si Hao Li, Olivier Pernet-Coudrier</p>
+        <p class="pub-status"><em>Regards croises sur l'economie</em>, 2024</p>
       </div>
       <figure class="pub-media" aria-hidden="true">
-        <figcaption class="pub-media-label">Financial Innovation</figcaption>
       </figure>
     </article>
   </section>
