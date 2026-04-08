@@ -164,10 +164,6 @@
     font-weight: 600;
 }
 
-.about-past-link {
-    margin-top: 1rem;
-}
-
 @keyframes about-fade-up {
     from {
         opacity: 0;

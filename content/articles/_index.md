@@ -5,6 +5,12 @@ hidemeta: true
 markup: html
 ---
 
+<style>
+  .main {
+    max-width: min(1480px, calc(100vw - 2rem));
+  }
+</style>
+
 <div class="publications">
   <section class="pub-section">
     <h2 class="pub-section-title">PhD Thesis</h2>

@@ -27,7 +27,7 @@
 
 .pub-card {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(180px, 240px);
+    grid-template-columns: minmax(0, 1.25fr) minmax(150px, 210px);
     gap: 0.95rem;
     align-items: stretch;
 }
@@ -36,6 +36,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.55rem;
+    min-width: 0;
     min-height: 240px;
     padding: 1rem;
     border-radius: 16px;
@@ -105,6 +106,10 @@
 
 .pub-media {
     position: relative;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     overflow: hidden;
     border-radius: 16px;
     border: 1px solid rgba(15, 23, 42, 0.12);
