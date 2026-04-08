@@ -32,6 +32,10 @@
     align-items: stretch;
 }
 
+.pub-card-no-media {
+    grid-template-columns: minmax(0, 1fr);
+}
+
 .pub-paper {
     display: flex;
     flex-direction: column;
@@ -133,7 +137,8 @@
     inset: 0;
     background-image: var(--pub-image);
     background-position: center;
-    background-size: cover;
+    background-size: var(--pub-image-size, cover);
+    background-repeat: no-repeat;
     opacity: 0.95;
 }
 
