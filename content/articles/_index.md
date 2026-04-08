@@ -119,7 +119,7 @@ markup: html
   <section class="pub-section">
     <h2 class="pub-section-title">Master Thesis</h2>
 
-    <article class="pub-card">
+    <article class="pub-card pub-card-no-media">
       <div class="pub-paper">
         <p class="pub-kicker">Master Thesis</p>
         <h3 class="pub-title">Innovation under Interoperability: An Analysis of Asymmetric Ad-Financed Platforms</h3>
@@ -130,11 +130,9 @@ markup: html
           <p>This exercise proposes a theoretical model inspired by and extending the recent approach of Bourreau et al. (2023), to analyze the effect of interoperability on innovation incentives in an asymmetric market of advertising-funded digital platforms (such as WhatsApp vs. Signal). Within a classic Hotelling framework with endogenous multi-homing, we explicitly incorporate strategic innovation choices in the presence of technological spillovers, allowing the dominant platform to copy the innovations developed by the minority platform. Our results show that the introduction or increase of interoperability reduces users' propensity to multi-home, thereby incentivizing the minority platform to intensify its investment in innovation to preserve its vertical differentiation. Conversely, the spillover discourages autonomous innovation by the leader. These theoretical results highlight the necessity of fine-tuned regulation of interoperability levels and the protection of innovations to effectively promote innovation dynamics.</p>
         </details>
       </div>
-      <figure class="pub-media" aria-hidden="true">
-      </figure>
     </article>
 
-    <article class="pub-card">
+    <article class="pub-card pub-card-no-media">
       <div class="pub-paper">
         <p class="pub-kicker">Master Thesis</p>
         <h3 class="pub-title">Network externalities, Compatibility, and R&amp;D: A Literature Review</h3>
@@ -145,8 +143,6 @@ markup: html
           <p>This literature review aims to provide a synthesis of key themes in Industrial Organization, with a particular focus on markets characterized by network externalities. First, it explores the relationship between competition and innovation before examining the issue of compatibility and its implications, notably in the context of the Digital Markets Act.</p>
         </details>
       </div>
-      <figure class="pub-media" aria-hidden="true">
-      </figure>
     </article>
   </section>
 
