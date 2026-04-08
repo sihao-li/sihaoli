@@ -192,3 +192,11 @@
         padding: 0.85rem 0.85rem 0.85rem 1rem;
     }
 }
+
+.about-inline-btn {
+    margin-top: 1rem;
+}
+
+.about-past-positions p {
+    margin-bottom: 0;
+}

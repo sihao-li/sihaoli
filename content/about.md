@@ -41,7 +41,15 @@ markup: html
       You can also explore more materials via
       <a href="https://www.sihaoli.com">sihaoli.com</a>.
     </p>
+  </section>
 
+  <section class="about-section about-past-positions">
+    <h3>Past Positions</h3>
+    <p>
+      Discover my previous research and teaching positions, with details on projects,
+      institutions, and field experience.
+    </p>
+    <a class="about-btn about-btn-primary about-inline-btn" href="/past/">View Past Positions</a>
   </section>
 
   <section class="about-section about-past">

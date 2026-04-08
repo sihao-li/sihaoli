@@ -137,24 +137,12 @@
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, 0.45) 100%),
-        radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.22), transparent 40%);
+        radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.22), transparent 40%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.22));
 }
 
 .pub-media-label {
-    position: absolute;
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.65rem;
-    margin: 0;
-    z-index: 1;
-    padding: 0.35rem 0.55rem;
-    border-radius: 9px;
-    background: rgba(15, 23, 42, 0.55);
-    color: #f8fafc;
-    font-size: 0.78rem;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
+    display: none;
 }
 
 @media (max-width: 920px) {

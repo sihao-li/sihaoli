@@ -13,24 +13,32 @@ menu:
     main:
         - name: About
           url: about/
-          weight: 0
+          weight: 1
         - name: Publications
           url: articles/
-          weight: 1
+          weight: 2
         - name: Talks
           url: talks/
-          weight: 2
+          weight: 3
         - name: Teaching
           url: teaching/
-          weight: 3 
+          weight: 4
         - name: Resume
           url: cv.pdf
+          weight: 5
         - name: Learning Ressources
           url: ressources/
+<<<<<<< ours
           weight: 4
         - name: Tutorials and Data
           url: publications/
           weight : 5
+=======
+          weight: 6
+        - name: Tutorials and Data
+          url: publications/
+          weight: 7
+>>>>>>> theirs
 
 params:
     description: "PhD candidate in Economics at Telecom Paris (CREST). My research interests span Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science. Contact: si.li@ip-paris.fr | si-hao.li@ensae.fr."
