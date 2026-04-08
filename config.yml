@@ -28,12 +28,9 @@ menu:
         - name: Learning Ressources
           url: ressources/
           weight: 4
-        - name: Past Positions
-          url: past/
-          weight: 5
         - name: Tutorials and Data
           url: publications/
-          weight : 6
+          weight : 5
 
 params:
     description: "PhD candidate in Economics at Telecom Paris (CREST). My research interests span Industrial Organization, Digital Economics, Economics of Innovation, and Computational Social Science. Contact: si.li@ip-paris.fr | si-hao.li@ensae.fr."
@@ -79,8 +76,6 @@ params:
               url: cv.pdf
             - name: Learning Ressources
               url: ressources/
-            - name: Past Positions
-              url: past/
             - name: Tutorials and Data
               url: publications/
     socialIcons:

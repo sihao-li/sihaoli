@@ -43,4 +43,13 @@ markup: html
     </p>
 
   </section>
+
+  <section class="about-section about-past">
+    <h3>Past Positions</h3>
+    <p>
+      You can find a summary of my previous research and teaching positions,
+      with details on projects and institutions.
+    </p>
+    <a class="about-btn about-btn-primary about-past-link" href="/past/">Open Past Positions</a>
+  </section>
 </div>

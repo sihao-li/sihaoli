@@ -1,45 +1,63 @@
 .publications {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .pub-section {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    padding: 1.5rem;
-    border-radius: 18px;
-    background: var(--entry);
-    box-shadow: 0 18px 40px rgba(16, 24, 40, 0.06);
+    gap: 1rem;
+    padding: 1.35rem;
+    border-radius: 20px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    background:
+        radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.1), transparent 48%),
+        radial-gradient(circle at 100% 100%, rgba(14, 116, 144, 0.1), transparent 50%),
+        var(--entry);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
 }
 
 .pub-section-title {
     margin: 0;
     font-size: 1.5rem;
-    letter-spacing: 0.02em;
-    color: var(--primary);
+    letter-spacing: 0.01em;
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 .pub-card {
     display: grid;
-    gap: 0.5rem;
-    padding: 1.25rem;
-    border-radius: 16px;
-    background: var(--theme);
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    grid-template-columns: minmax(0, 1.4fr) minmax(180px, 240px);
+    gap: 0.95rem;
+    align-items: stretch;
 }
 
-.pub-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+.pub-paper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    min-height: 240px;
+    padding: 1rem;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: var(--theme);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.pub-kicker {
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #0f766e;
 }
 
 .pub-title {
     margin: 0;
-    font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.06rem;
+    line-height: 1.35;
+    font-family: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 }
 
 .pub-title a {
@@ -49,37 +67,27 @@
 
 .pub-title a:hover {
     text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .pub-authors,
 .pub-status,
 .pub-links {
     margin: 0;
+    font-size: 0.93rem;
     color: var(--secondary);
-    font-size: 0.95rem;
 }
 
 .pub-links a {
-    color: var(--tertiary);
+    color: #0e7490;
     font-weight: 600;
 }
 
-.pub-badge {
-    display: inline-block;
-    margin-right: 0.5rem;
-    padding: 0.15rem 0.6rem;
-    border-radius: 999px;
-    background: rgba(14, 116, 144, 0.12);
-    color: #0e7490;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
 .pub-abstract {
-    margin-top: 0.3rem;
-    padding: 0.6rem 0.9rem;
+    margin-top: 0.2rem;
+    padding: 0.55rem 0.75rem;
     border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
     background: rgba(148, 163, 184, 0.08);
 }
 
@@ -92,15 +100,87 @@
 .pub-abstract p {
     margin: 0.6rem 0 0;
     color: var(--secondary);
-    line-height: 1.6;
+    line-height: 1.58;
 }
 
-@media (max-width: 720px) {
-    .pub-section {
-        padding: 1.25rem;
+.pub-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background:
+        linear-gradient(145deg, rgba(15, 118, 110, 0.16), rgba(14, 116, 144, 0.14)),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.18) 0,
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px,
+            transparent 16px
+        ),
+        var(--entry);
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.1);
+    aspect-ratio: 1 / 1;
+}
+
+.pub-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--pub-image);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.95;
+}
+
+.pub-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, 0.45) 100%),
+        radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.22), transparent 40%);
+}
+
+.pub-media-label {
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.65rem;
+    margin: 0;
+    z-index: 1;
+    padding: 0.35rem 0.55rem;
+    border-radius: 9px;
+    background: rgba(15, 23, 42, 0.55);
+    color: #f8fafc;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 920px) {
+    .pub-card {
+        grid-template-columns: 1fr;
     }
 
-    .pub-card {
+    .pub-paper {
+        min-height: auto;
+    }
+
+    .pub-media {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 640px) {
+    .pub-section {
         padding: 1rem;
+    }
+
+    .pub-paper {
+        padding: 0.85rem;
+    }
+
+    .pub-title {
+        font-size: 1rem;
     }
 }

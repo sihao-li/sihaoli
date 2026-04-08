@@ -28,10 +28,8 @@
 <script>
     let menu = document.getElementById('menu')
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
+        menu.scrollLeft = 0;
+        localStorage.removeItem("menu-scroll-position");
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
