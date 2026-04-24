@@ -1,0 +1,44 @@
+{
+  "name": "Si Hao Li",
+  "title": "PhD candidate in Economics",
+  "affiliation": "Telecom Paris (CREST)",
+  "description": "I am a PhD candidate in Economics at Telecom Paris (CREST), with research interests in Industrial Organization, Digital Economics, Economics of Innovation, and Text-as-Data methods.",
+  "researchSnapshot": [
+    "I generally work on platform-related questions, using both theoretical and empirical approaches, with Industrial Organization as my main analytical framework.",
+    "I had a multidisciplinary French-style academic training, so I am interested in a wide range of methods and topics. Feel free to contact me to discuss research."
+  ],
+  "emails": [
+    "si.li@ip-paris.fr",
+    "si-hao.li@ensae.fr"
+  ],
+  "office": "Telecom Paris, room 3A468",
+  "site": "https://www.sihaoli.com",
+  "portrait": "/public/images/profile/portrait-640.jpg",
+  "cv": "/public/cv.pdf",
+  "links": {
+    "googleScholar": "https://scholar.google.com/citations?user=q-OuuE4AAAAJ&hl=fr",
+    "github": "https://github.com/sihao-li",
+    "twitter": "https://x.com/SihaoLS",
+    "email": "mailto:si.li@ip-paris.fr",
+    "orcid": ""
+  },
+  "researchThemes": [
+    "Industrial Organization",
+    "Digital Economics",
+    "Economics of Innovation",
+    "Text-as-Data",
+    "Computational Social Science",
+    "Platforms",
+    "Interoperability",
+    "Knowledge Networks"
+  ],
+  "conferenceFocus": [
+    "Séminaire Doctorant numérique, May 2026",
+    "AFREN, June 2026",
+    "EARIE, August 2026"
+  ],
+  "todos": [
+    "Verify latest CV PDF before publishing.",
+    "Add ORCID if the public identifier should be displayed."
+  ]
+}

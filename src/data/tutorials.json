@@ -1,0 +1,32 @@
+[
+  {
+    "id": "zero-shot-llm-social-science",
+    "title": "[FR] Tutoriel : Faire de la classification zero-shot avec des API de LLM en sciences sociales",
+    "date": "2024-09-01",
+    "language": "French",
+    "category": "LLM/social science",
+    "summary": "Comment exploiter les API de grands modèles de langue pour réaliser de la classification zero-shot dans les sciences sociales.",
+    "source": "src/content/tutorials/zero-shot-llm-social-science.md",
+    "url": "/tutorials/zero-shot-llm-social-science/"
+  },
+  {
+    "id": "antitrust-econometrics-cartels",
+    "title": "[FR] Éclairer l'ombre des cartels : petite introduction à l'économétrie de l'antitrust",
+    "date": "2025-02-01",
+    "language": "French",
+    "category": "Industrial Organization",
+    "summary": "Économétrie de l'antitrust : mesurer l'impact des cartels.",
+    "source": "src/content/tutorials/antitrust-econometrics-cartels.md",
+    "url": "/tutorials/antitrust-econometrics-cartels/"
+  },
+  {
+    "id": "top-five-econ-dataviz",
+    "title": "Data Viz - Top 5 Econ",
+    "date": "2026-03-18",
+    "language": "English",
+    "category": "Data visualization",
+    "summary": "Self-hosted static visualization for terms in titles and abstracts published in top-five economics journals.",
+    "dataset": "/public/data/top5-econ.csv",
+    "url": "/tutorials/top-five-econ-dataviz/"
+  }
+]

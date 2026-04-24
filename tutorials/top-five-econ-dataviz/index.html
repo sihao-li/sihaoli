@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Viz - Top 5 Econ | Si Hao Li</title>
+  <meta name="description" content="Self-hosted static visualization for terms in titles and abstracts published in top-five economics journals.">
+  <meta name="author" content="Si Hao Li">
+  <meta name="theme-color" content="#f7f1e8">
+  <meta property="og:title" content="Data Viz - Top 5 Econ | Si Hao Li">
+  <meta property="og:description" content="Self-hosted static visualization for terms in titles and abstracts published in top-five economics journals.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.sihaoli.com/tutorials/top-five-econ-dataviz/">
+  <link rel="icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/animations.css">
+  
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/public/vendor/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body data-page="tutorials" class="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas class="webgl-bg" id="webgl-bg" aria-hidden="true"></canvas>
+  <header class="site-header" data-site-header>
+    <a class="brand" href="/" aria-label="Si Hao Li home">
+      <img class="brand-logo" src="/public/images/telecom-paris-logo.svg" alt="Telecom Paris">
+      <span>Si Hao Li</span>
+    </a>
+    <button class="nav-toggle icon-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>☰</button>
+    <nav class="site-nav" aria-label="Main navigation" data-site-nav>
+      <a href="/publications/">Publications</a>
+      <a href="/talks/">Talks</a>
+      <a href="/teaching/">Teaching</a>
+      <a href="/tutorials/">Tutorials & Data</a>
+      <a href="/public/cv.pdf">CV</a>
+      <a class="nav-pill" href="/conference/">Conference</a>
+    </nav>
+    <button class="theme-toggle icon-button" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle>◐</button>
+  </header>
+  <main id="main">
+
+    <section class="page-hero article-hero">
+      <p class="eyebrow">English · Data visualization · 2026-03-18</p>
+      <h1>Data Viz - Top 5 Econ</h1>
+      <p>Self-hosted static visualization for terms in titles and abstracts published in top-five economics journals.</p>
+    </section>
+    <section class="dataviz-panel">
+      <div class="dataviz-card">
+        <h2>What you can do</h2>
+        <p>Track term frequency, compare periods, filter by journal, and inspect matching articles without relying on a sleeping external app.</p>
+      </div>
+      <div class="dataviz-workbench" data-top5-dataviz data-dataset="/public/data/top5-econ.csv">
+        <div class="dataviz-controls" aria-label="Top five economics visualization controls">
+          <label>
+            <span>Search terms</span>
+            <input type="search" value="theory" data-dataviz-query>
+          </label>
+          <label>
+            <span>Smoothing</span>
+            <input type="range" min="0" max="12" value="2" data-dataviz-smooth>
+            <output data-dataviz-smooth-output>2 years</output>
+          </label>
+          <div class="dataviz-years">
+            <label>
+              <span>From</span>
+              <input type="number" data-dataviz-year-min>
+            </label>
+            <label>
+              <span>To</span>
+              <input type="number" data-dataviz-year-max>
+            </label>
+          </div>
+          <div>
+            <span class="control-label">Journals</span>
+            <div class="journal-options" data-dataviz-journals></div>
+          </div>
+        </div>
+        <div class="dataviz-output">
+          <div class="dataviz-metrics" data-dataviz-metrics>
+            <p>Loading local dataset...</p>
+          </div>
+          <canvas class="dataviz-chart" width="980" height="440" data-dataviz-chart aria-label="Term frequency over time"></canvas>
+          <p class="dataviz-caption" data-dataviz-caption>Metric: exact token matches in titles and abstracts, divided by total words in the selected corpus.</p>
+          <div class="dataviz-results" data-dataviz-results></div>
+        </div>
+        <noscript>
+          <p class="content-note">JavaScript is required for the interactive visualization. The dataset is available at /public/data/top5-econ.csv.</p>
+        </noscript>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>Si Hao Li · PhD candidate in Economics · Telecom Paris (CREST)</p>
+    <p><a href="mailto:si.li@ip-paris.fr">si.li@ip-paris.fr</a> · <a href="https://scholar.google.com/citations?user=q-OuuE4AAAAJ&hl=fr">Google Scholar</a> · <a href="https://github.com/sihao-li">GitHub</a></p>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

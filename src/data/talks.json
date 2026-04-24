@@ -1,0 +1,44 @@
+[
+  {
+    "year": "2026",
+    "dateLabel": "2026",
+    "title": "8th Geography of Innovation Conference at Corvinus University of Budapest",
+    "location": "Budapest, Hungary",
+    "city": "Budapest",
+    "country": "Hungary",
+    "lat": 47.4979,
+    "lng": 19.0402,
+    "url": "https://www.geoinno2026.com/",
+    "eventType": "Conference",
+    "paperPresented": "Co-invention and knowledge transfer in science-industry collaboration: Evidence on Recombinant Novelty",
+    "type": "conference"
+  },
+  {
+    "year": "2025",
+    "dateLabel": "2025",
+    "title": "AFREN PhD Workshop at Mines-PSL",
+    "location": "Paris, France",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "url": "https://afren.fr/2025/09/30/workshopdoctoral2025/afren_dw25-0446/",
+    "eventType": "PhD Workshop",
+    "paperPresented": "PhD thesis project presentation",
+    "type": "workshop"
+  },
+  {
+    "year": "2025",
+    "dateLabel": "2025",
+    "title": "NLP Workshop at ACSS-PSL",
+    "location": "Paris, France",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "url": "https://acss-dig.psl.eu/fr/seminaires/nlp",
+    "eventType": "Workshop",
+    "paperPresented": "What are economists telling us in the top 5? A Structural Topic Models approach",
+    "type": "workshop"
+  }
+]

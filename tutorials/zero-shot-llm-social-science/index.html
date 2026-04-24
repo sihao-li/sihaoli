@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutoriel : Faire de la classification zero-shot avec des API de LLM en sciences sociales | Si Hao Li</title>
+  <meta name="description" content="Comment exploiter les API de grands modèles de langue pour réaliser de la classification zero-shot dans les sciences sociales.">
+  <meta name="author" content="Si Hao Li">
+  <meta name="theme-color" content="#f7f1e8">
+  <meta property="og:title" content="Tutoriel : Faire de la classification zero-shot avec des API de LLM en sciences sociales | Si Hao Li">
+  <meta property="og:description" content="Comment exploiter les API de grands modèles de langue pour réaliser de la classification zero-shot dans les sciences sociales.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.sihaoli.com/tutorials/zero-shot-llm-social-science/">
+  <link rel="icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/animations.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        processEscapes: true
+      },
+      chtml: {
+        fontURL: "/public/vendor/mathjax/output/chtml/fonts/woff-v2"
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script defer src="/public/vendor/mathjax/tex-chtml.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/public/vendor/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body data-page="tutorials" class="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas class="webgl-bg" id="webgl-bg" aria-hidden="true"></canvas>
+  <header class="site-header" data-site-header>
+    <a class="brand" href="/" aria-label="Si Hao Li home">
+      <img class="brand-logo" src="/public/images/telecom-paris-logo.svg" alt="Telecom Paris">
+      <span>Si Hao Li</span>
+    </a>
+    <button class="nav-toggle icon-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>☰</button>
+    <nav class="site-nav" aria-label="Main navigation" data-site-nav>
+      <a href="/publications/">Publications</a>
+      <a href="/talks/">Talks</a>
+      <a href="/teaching/">Teaching</a>
+      <a href="/tutorials/">Tutorials & Data</a>
+      <a href="/public/cv.pdf">CV</a>
+      <a class="nav-pill" href="/conference/">Conference</a>
+    </nav>
+    <button class="theme-toggle icon-button" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle>◐</button>
+  </header>
+  <main id="main">
+
+    <section class="page-hero article-hero">
+      <p class="eyebrow">French · LLM/social science · 2024-09-01</p>
+      <h1>[FR] Tutoriel : Faire de la classification zero-shot avec des API de LLM en sciences sociales</h1>
+      <p>Comment exploiter les API de grands modèles de langue pour réaliser de la classification zero-shot dans les sciences sociales.</p>
+    </section>
+    <article class="article-body">
+      <p>Les modèles génératifs (ChatGPT, Claude, Mistral, …) sont en train de transformer la recherche. Par exemple, dans son article intitulé &quot;<em>Generative AI for Economic Research: Use Cases and Implications for Economists,</em>&quot; l&#039;économiste A. Korinek explore comment l&#039;IA générative est amenée à transformer les pratiques en économie : il prévoit des gains de productivité significatifs grâce à l&#039;automatisation de micro-tâches, telles que la génération de code ou la résolution de problèmes d&#039;optimisation.</p>
+<p>Par exemple, une tâche souvent réalisée en sciences sociales est l&#039;annotation de textes. Réalisée manuellement, cette tâche peut être extrêmement longue et devient presque impossible lorsqu&#039;il s&#039;agit de bases de données contenant des milliers d&#039;éléments. Les tâches que le chercheur réalisait autrefois avec un surligneur et des annotations manuscrites[^1] sur feuille ou Excel peuvent désormais être effectuées par une machine à une échelle beaucoup plus large convertissant des données qualitatives en données quantitatives.</p>
+<p>[^1]: Par exemple, considérons la base de données GENIA. Cette base comprend 400 000 mots annotés en microbiologie, un travail colossal qui a mobilisé sept personnes pendant un an et demi (Kim et al., 2008).</p>
+<p>Si historiquement les usages reposaient surtout sur l’adaptation de « petits » modèles aux besoins spécifiques des chercheurs sur leurs propres ordinateurs, l’arrivée de modèles plus volumineux et puissant ont amené de nouvelles possibilités et problèmes.</p>
+<p>Ce tutoriel propose spécifiquement de s’intéresser à l’utilisation de ces modèles dans le cadre de la recherche en sciences sociales, notamment quand il n’est plus possible de les installer directement sur son ordinateur mais qu’il faut y accéder par l’exécution de requête sur une interface (API). Ainsi, ce tutoriel est destiné à tous ceux qui souhaitant faire de la recherche en sciences sociales avec des méthodes computationnelles. Il se concentre notamment sur la manière de mettre en œuvre ce type de traitement à partir d’un exemple concret. Nous reviendrons sur cet exemple concret.</p>
+<p>Dans cette première partie, nous examinerons la méthode du zero-shot, en détaillant son fonctionnement ainsi que les différents modèles de langage (LLM) associés et les stratégies qui en découlent. Par la suite, dans la deuxième partie, nous présenterons une application concrète à travers l&#039;utilisation de l&#039;API du modèle d&#039;IA générative Mistral.</p>
+<h2>1. Un peu de contexte : du fine-tuniong au zéro-shot</h2>
+<p>Historiquement, les usages se sont d’abord développés avec l’utilisation de modèles relativement petits, par exemple les modèles comme BERT (Do et al., 2022). BERT (Bidirectional Encoder Representations from Transformers) est conçu pour comprendre le contexte des mots dans une phrase en prenant en compte ceux qui le précèdent et le suivent. Pour avoir des performances de bonne qualité pour les tâches spécifiques de la recherche, cela passait par du fine-tuning des modèles génériques sur les données spécifiques utilisées. Le fine-tuning de BERT, qui consiste à adapter ce modèle pré-entraîné à des tâches spécifiques, est particulièrement bénéfique pour l&#039;annotation en sciences sociales. Il permet de spécialiser BERT pour être plus spécifique aux termes, structures et contextes spécifiques à ce domaine, rendant les annotations aussi précises parfois que celles des experts humains.</p>
+<p>D&#039;autres solutions utilisent les possibilités offertes par les très grands modèles, capables de résoudre des tâches sans pré-entraînement. En effet, les derniers modèles proposés par les principaux acteurs du marché permettent d&#039;automatiser de nombreuses tâches d&#039;interprétation de divers types de données, notamment les textes et les images. Par exemple, l’article &quot;GPT versus Resident Physicians — A Benchmark Based on Official Board Scores&quot; (Katz, Uriel, et al. 2024) démontre la puissance de GPT-4, dont les performances sont comparables à celles des médecins lors des examens officiels de résidence médicale. Le modèle a atteint ou dépassé le taux de réussite officiel dans toutes les spécialités testées, montrant le potentiel immense de ces outils.</p>
+<h2>2. Quel modèle ? Quel prix ? Quelle performance ?</h2>
+<p>Ainsi, un modèle de langage open source, tel que LLaMA, est un modèle dont le code source est librement accessible au public. Cela permet aux utilisateurs de télécharger, modifier et déployer le modèle sur leurs propres serveurs ou machines, offrant une grande flexibilité et personnalisation. Cependant, cette liberté s&#039;accompagne de la nécessité de disposer des ressources nécessaires pour l’utilisation ou l’entrainement modèle. En revanche, un modèle payant accessible via une API, comme GPT-4o, est un service fourni par une entreprise où les utilisateurs accèdent au modèle en envoyant des requêtes à un serveur distant via une interface de programmation (API). Ce type de modèle simplifie l&#039;intégration et l&#039;utilisation, car toute l&#039;infrastructure est gérée par le fournisseur du service. Toutefois, il offre moins de contrôle et de possibilités de personnalisation par rapport aux modèles open source. Lors du choix entre ces deux options, il est essentiel de considérer vos priorités en termes de coûts, de flexibilité, et de hardware. Le graphique suivant illustre de manière concrète les différentes stratégies d&#039;annotation de texte. En fonction de cela, nous vous invitons à consulter ce tutoriel ou celui déjà présent sur le site CSS concernant la façon de fine-tuner BERT pour effectuer de la classification. Nous rappelons que nous nous concentrons sur la classification zero-shot, une méthode qui ne nécessite pas de fine-tuning. Pour autant, il est indissociable du « prompt », une instruction ou une requête donnée à un modèle de langage pour générer une réponse ou accomplir une tâche spécifique.</p>
+<div style="text-align:center">
+<p><img src="/public/genllm.png" alt="Figure 1" loading="lazy"></p>
+</div>
+<p>Précisons tout de même que l’utilisation des API présente des avantages techniques, mais elle est également soumise à des contraintes économiques. Prenons un exemple : nous souhaitons classifier 200 résumés d’article scientifiques de différentes disciplines avec une moyenne de 150 mots par abstracts. Nous utilisons l’API GPT4 qui peut jusqu’à 4096 tokens. Un texte de 150 mots correspond généralement à environ 200 à 300 tokens Le tarif pour GPT-4 est plus élevé, avec des prix typiques autour de 0,03 euros pour 1000 tokens en entrée et 00.6 euros pour 1000 tokens en sortie. Pour 200 textes de 150 mots, si on estime environ 250 tokens par texte, cela représente 50 000 tokens (200 * 250). Ainsi le coût d’entrée pour 50 000 tokens serait : 50 000/1000 * 0.3 = 1,5 USD. Si chaque réponse générée (par exemple, une classification &quot;économie&quot;, &quot;maths&quot;, etc.) utilise environ 10 tokens, pour 200 réponses, on a 2000 tokens en sortie. : 2000/1000 ∗ 0 ,06 = 0,12USD. Ainsi, nous avons un coût total de 1,62 USD. Nous tenons à préciser que cette mesure est perfectible et que nous vous recommandons d’aller directement sur le site de l’API pour faire votre propre tarification.</p>
+<p>Nous nous sommes concentrés sur les modèles les plus connus, tels que ceux de Mistral, Meta, OpenAI et Google. Ces modèles sont fréquemment mentionnés dans les articles de recherche en sciences sociales (G. Mens et A. Gallego, 2024 ; F. Gilardi et al. 2023). Le tableau illustre ces modèles, leur type, si c’est un modèle open-source ou non, les contraintes techniques et économiques.</p>
+<div class="table-wrap"><table><tr><th>LLM</th><th>Type de LLM</th><th>API et/ou Open Source</th><th>Contraintes techniques</th><th>Contraintes économiques</th><th>Prix</th></tr><tr><td>Llama 3 8B</td><td>Small</td><td>Open Source</td><td>Modérée</td><td>Gratuit mais nécessite des ressources techniques</td><td>N/A</td></tr><tr><td>Llama 3 70B</td><td>Large</td><td>Open Source</td><td>Très forte</td><td>Gratuit mais nécessite des ressources techniques</td><td>N/A</td></tr><tr><td>Mistral 7B</td><td>Small</td><td>API &amp; Open Source</td><td>Faible (API) / Modérée (Open Source)</td><td>Gratuit mais nécessite des ressources techniques / API payante</td><td>Entrée : $1 / 1 M tokens&lt;br&gt;Sortie : $3 / 1 M tokens</td></tr><tr><td>Mistral 8×7B</td><td>Medium</td><td>API &amp; Open Source</td><td>Faible (API) / Forte (Open Source)</td><td>Gratuit mais nécessite des ressources techniques / API payante</td><td>Entrée : $2.7 / 1 M tokens&lt;br&gt;Sortie : $8.1 / 1 M tokens</td></tr><tr><td>Mistral 8×22</td><td>Large</td><td>API &amp; Open Source</td><td>Faible (API) / Très forte (Open Source)</td><td>Gratuit mais nécessite des ressources techniques / API payante</td><td>Entrée : $4 / 1 M tokens&lt;br&gt;Sortie : $12 / 1 M tokens</td></tr><tr><td>GPT‑4o</td><td>Large</td><td>API</td><td>Faible</td><td>API payante</td><td>Entrée : $5 / 1 M tokens&lt;br&gt;Sortie : $15 / 1 M tokens</td></tr><tr><td>Gemini 1.5 flash</td><td>Large</td><td>API</td><td>Faible</td><td>API payante</td><td>Entrée : $0,35 / 1 M tokens&lt;br&gt;Sortie : $1 / 1 M tokens</td></tr></table></div>
+<p>Les modèles de langage small et large se distinguent principalement par le nombre de paramètres qu&#039;ils possèdent, leur capacité de traitement, leur performance, leur consommation de ressources et leurs applications. Par exemple LLaMA 3 8B, avec ses 7 milliards de paramètres, est plus rapide et moins complexe, ce qui le rend adapté à des tâches simples et spécifiques, tout en étant accessible en termes de ressources informatiques[^2]. En revanche, Mistral 8x2B, possédant plusieurs centaines de milliards de paramètres, offre une capacité de traitement et une performance nettement supérieure, notamment pour des tâches plus complexes.</p>
+<p>[^2]: Une contrainte technique élevée signifie que le modèle nécessite des ressources matérielles importantes, telles que des CPU, GPU et RAM</p>
+<h2>3. Annoter des textes avec l’API de Mistral[^3]</h2>
+<p>[^3]:Pour ce tutoriel, l&#039;utilisation du langage Python est indispensable. Nous vous suggérons d&#039;installer Python en utilisant la distribution Anaconda, puis de lancer un Notebook Jupyter. Une alternative possible est l&#039;utilisation de Google Colab, mais il convient de vérifier que les données manipulées ne sont pas confidentielles</p>
+<p>Dans cette section, nous nous proposons d&#039;illustrer la procédure d&#039;annotation d&#039;un corpus textuel avec l’API de Mistral AI. L&#039;objectif est d&#039;identifier et de catégoriser les discours misogynes afin de mieux comprendre et quantifier la présence de ce type de contenu sur les réseaux sociaux. Pour ce faire, nous avons opté pour un corpus de tweets caractérisés par leur contenu potentiellement misogyne, récupérés sur GitHub (@aollagnier). Nous appliquons la méthode de prompt décrite en annexe de l&#039;article de F. Gilardi et al. (2023), car elle offre une approche systématique et reproductible pour l&#039;annotation des textes.</p>
+<p>Il est important de comprendre les différents niveaux d&#039;utilisation possibles pour ce type de tâche comme nous l’avons rapidement évoqué précédemment :</p>
+<ul><li>Usage local : Exécution sur votre propre machine (ex: Ollama), avec avantages de confidentialité et contrôle total</li><li>API locale : Déploiement sur un serveur interne avec une API locale, offrant sécurité et scalabilité</li><li>Service tier : Utilisation d&#039;API cloud</li></ul>
+<p>Pour commencer, nous installons le package essentiel pour l&#039;utilisation de l&#039;API de Mistral. Cela facilite l&#039;interaction avec l&#039;API, en offrant des fonctionnalités prêtes à l&#039;emploi pour envoyer des requêtes, et traiter les réponses. Dans certains cas, les entreprises développent des bibliothèques spécialisées, communément appelées &quot;wrappers&quot;, dans le but de faciliter l&#039;interaction avec leurs services via des requêtes. C&#039;est notamment le cas de Mistral.</p>
+<pre><code class="language-python">!pip install mistralai</code></pre>
+<p>On charge ensuite les différentes bibliothèques que nous avons besoin pour utiliser le client Mistral :</p>
+<pre><code class="language-python">import os
+import csv
+from mistralai.client import MistralClient
+from mistralai.models.chat_completion import ChatMessage</code></pre>
+<p>Il sera nécessaire de vous inscrire sur le site de Mistral et d&#039;obtenir une clé API. En s&#039;inscrivant et en obtenant une clé API, vous acceptez les conditions d&#039;utilisation et les politiques de Mistral. Il est également important de rappeler que l&#039;utilisation de l&#039;API est soumise à des frais, dont les tarifs sont présentés dans le tableau 1. Une fois la clé API obtenue, il vous faudra choisir le modèle le plus adapté à votre tâche. Dans notre cas, nous opterons pour le modèle le plus étendu, bien qu&#039;il soit aussi le plus coûteux en termes de facturation par million de tokens (= unité de texte). Nous nous référons à l&#039;article de F. Gilardi et al. (2023) pour élaborer notre prompt que vous trouvez dans le code suivant. Vous avez la possibilité de l&#039;adapter à votre propre tâche ou d&#039;en créer un nouveau. Pratiquer l&#039;art du prompt avec modération est essentiel, car cela peut parfois s&#039;avérer être une tâche particulièrement ingrate (en termes de résultat), nous vous recommandons de vous référer à la littérature existante.</p>
+<pre><code class="language-python">model = &quot;mistral-large-latest&quot;
+
+client = MistralClient(api_key=&quot;OUR KEY API&quot;)
+
+#Nous adaptons ici le prompt propose par F. Gilardi et al. (2023)
+
+prompt = &quot;&quot;&quot;Pour cette tâche, il vous sera demandé d&#039;annoter des tweets provenant du site web Twitter. Avant de décrire la tâche, jetons un coup d&#039;œil rapide à l&#039;environnement de Twitter. Twitter est une plateforme de réseau social où les utilisateurs publient des messages courts appelés tweets, couvrant divers sujets. Pour cette tâche spécifique, vous devrez identifier et annoter les tweets qui présentent des éléments potentiellement misogynes. Pour chaque tweet, suivez les instructions suivantes : Lisez attentivement le texte du tweet, en prêtant attention aux détails et au contexte. Attention, les insultes ne signifient pas toujours que ça soit misogyne. Classez chaque tweet en 0, 1 ou 2 : 
+Les phrases doivent être codées comme 0 lorsque les tweets ne présentent pas de caractère misogyne, n&#039;utilisent pas de langage abusif. 
+Les phrases doivent être codées comme 1 lorsqu&#039;elles véhiculent des stéréotypes, essaient de montrer une supériorité masculine, contiennent des menaces violentes ou du harcèlement sexuel, manquent de respect aux femmes de manière générale, ou rejettent la responsabilité des hommes.
+Pour chaque tweet, répondez en un seul mot avec l&#039;une des deux annotations (0, 1) que vous devez faire.&quot;&quot;&quot;</code></pre>
+<p>Nous définissons une fonction annotate_sentence qui envoie chaque tweet à l&#039;API de Mistral et retourne l’annotation.</p>
+<pre><code class="language-python">def annotate_sentence(sentence):
+    full_prompt = prompt + sentence
+    chat_response = client.chat(
+        model=model,
+        messages=[ChatMessage(role=&quot;user&quot;, content=full_prompt)]
+    )
+    return chat_response.choices[0].message.content</code></pre>
+<p>Exemple :</p>
+<p>Si prompt = &quot;S’il est heureux annote 1, annote 0 le cas contraire: &quot; et sentence = &quot;Je suis très heureux aujourd&#039;hui.&quot;, alors full_prompt devient &quot; S’il est heureux annote 1, annote 0 le cas contraire : Je suis très heureux aujourd&#039;hui.&quot;</p>
+<p>Chat_reponse nous permet d’interagir avee le model qui nous retourne la réponse de notre prompt.</p>
+<p>Nous commençons par ouvrir notre fichier CSV, lequel comprend une sélection aléatoire de 100 éléments tirés du dataset mentionné en introduction. Ce dataset contient des annotations humaines ainsi que les tweets correspondants, en mode lecture. Ensuite, nous créons un nouveau fichier CSV, en mode écriture. Ce fichier sera utilisé pour enregistrer les tweets annotés par le LLM. Nous lisons chaque tweet du fichier et pour chaque tweet, nous envoyons son contenu à l&#039;API de Mistral, qui nous renvoie une annotation en format JSON. L&#039;API de Mistral renvoie des résultats sous forme de messages encapsulés dans des objets ChatMessage . Nous avons besoin du cntenu qui est dans un sous élément :  chat_response.choices[0].message.content. Nous nettoyons ensuite le résultat avec .strip() pour éviter les espaces indésirables. À la fin du processus, nous avons un fichier contenant tous les tweets annotés, et nous affichons un message confirmant que les annotations ont été sauvegardées avec succès.</p>
+<pre><code class="language-python">input_csv = &quot;tweet.csv&quot;
+output_csv = &quot;tweet2.csv&quot;
+
+with open(input_csv, mode=&#039;r&#039;, newline=&#039;&#039;, encoding=&#039;utf-8&#039;) as infile, \
+     open(output_csv, mode=&#039;w&#039;, newline=&#039;&#039;, encoding=&#039;utf-8&#039;) as outfile:
+
+    reader = csv.DictReader(infile)
+    fieldnames = reader.fieldnames + [&#039;Annotation&#039;]
+    writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+
+    for row in reader:
+        sentence = row[&#039;Tweet&#039;]
+        annotation = annotate_sentence(sentence)
+        row[&#039;Annotation&#039;] = annotation
+        writer.writerow(row)
+
+print(f&quot;Annotation finito : {output_csv}.&quot;)
+
+Une requête prend en moyenne une à dix seconde, mais nous vous recommandons d’utiliser la bibliothèque time sur Python qui vous donnera le temps exact. Il se peut que le modèle de langage (LLM) rencontre des difficultés à annoter correctement certaines phrases. Toutefois, ces cas demeurent rares. Dans ces situations, nous vous suggérons de vérifier manuellement les annotations en utilisant la version gratuite du chat.</code></pre>
+<h2>4. Évaluer la qualité de l&#039;annotation</h2>
+<p>La question fondamentale après l’annotation est de questionner si elles sont correctes en mesurant la fiabilité de cette annotation. Nous rappelons que ces annotations relèvent de la quantification qui suppose des conventions d’équivalences préalables (Desrosières, 2008). Un consensus scientifique émerge autour de l&#039;idée que l&#039;évaluation de la fiabilité des annotations est essentielle, car elle conditionne la validité même du processus d&#039;annotation. Cela implique, entre autres, une comparaison systématique entre les annotations produites par des humains et celles générées par la machine.</p>
+<p>Pour évaluer l’efficacité et la qualité de l’annotation, la pratique est d’utiliser des scores, notamment le score F1 et notre Kappa de Fleiss (&gt; 2 annoteurs) ou Kappa de Cohen (2 annoteurs) pondéré par le taux d&#039;erreur d&#039;annotation. Ce taux peut varier de manière significative en fonction du prompt utilisé. Le F1 score est une mesure de la précision d&#039;un modèle de classification. Il est la moyenne harmonique de la précision qui mesure la qualité des annotations et du rappel qui mesure la quantité d’annotations trouvées.</p>
+<p><strong>Précision</strong></p>
+<div class="math-display">\[\text{Précision} =\ \frac{\text{Vrai Positif}}{\text{Vrai Positif} + \text{Faux Positif}}\]</div>
+<p><strong>Rappel</strong></p>
+<div class="math-display">\[\text{Rappel} =\ \frac{\text{Vrai Positif}}{\text{Vrai Positif} + \text{Faux Négatif}}\]</div>
+<p><strong>F‑score (F1)</strong></p>
+<div class="math-display">\[F_{1} =\ 2 \times \frac{\text{Précision} \times \text{Rappel}} {\text{Précision} + \text{Rappel}}\]</div>
+<blockquote><p>Les LLM peuvent annoter de façon divergente ou commettre des erreurs de syntaxe,</p><p>ce qui réduit la précision. Nous tenons donc compte d’un <strong>taux d’erreur d’annotation (TER)</strong> :</p></blockquote>
+<div class="math-display">\[\text{TER} =\ \frac{\text{Erreur d’annotation}} {\text{Vrai Positif} + \text{Faux Positif}}\]</div>
+<p>Accord inter‑annotateurs : kappa de Fleiss</p>
+<p>Avec \(P_{0}\) la proportion d’accords observés et \(P_{e}\) celle attendue par hasard :</p>
+<div class="math-display">\[P_{0} =\ \frac{1}{N\,n\,(n-1)} \sum_{i=1}^{N}\sum_{j=1}^{k} n_{ij}\,\bigl(n_{ij}-1\bigr)\]</div>
+<div class="math-display">\[P_{e} =\ \sum_{j=1}^{k} p_{j}^{2}\]</div>
+<p><strong>Kappa de Fleiss</strong></p>
+<div class="math-display">\[k =\ \frac{P_{0} - P_{e}}{1 - P_{e}}\]</div>
+<p>Pour pondérer ce kappa par la qualité des annotations :</p>
+<div class="math-display">\[E_{k} =\ k \times \bigl(1 - \text{TER}\bigr)\]</div>
+<h3>Interprétation des valeurs de \(k\)</h3>
+<div class="table-wrap"><table><tr><th>Niveau</th><th>Seuil</th></tr><tr><td>Faible</td><td>\(k \le 0.20\)</td></tr><tr><td>Moyen</td><td>\(0.21 \le k \le 0.60\)</td></tr><tr><td>Forte</td><td>\(k &gt; 0.60\)</td></tr></table></div>
+<p>Ces tests sont implémentés dans des bibliothèques. Il suffit donc de les utiliser sur les données annotées.</p>
+<pre><code class="language-python">from sklearn.metrics import classification_report, cohen_kappa_score
+
+our_label = df_tweet2[&quot;Category&quot;].tolist()
+model_label = df_tweet2[&quot;Annotation&quot;].tolist()
+kappa = cohen_kappa_score(df_tweet2[&#039;Category&#039;], df2[&#039;Annotation&#039;])
+
+report = classification_report(our_label, model_label)
+print(report)
+print(&quot;Kappa de Cohen:&quot;, kappa)</code></pre>
+<div class="table-wrap"><table><tr><th></th><th>precision</th><th>recall</th><th>f1‑score</th><th>support</th></tr><tr><td><strong>Classe 0</strong></td><td>0.84</td><td>0.70</td><td>0.77</td><td>61</td></tr><tr><td><strong>Classe 1</strong></td><td>0.63</td><td>0.79</td><td>0.70</td><td>39</td></tr><tr><td><strong>Accuracy</strong></td><td></td><td></td><td><strong>0.74</strong></td><td><strong>100</strong></td></tr><tr><td><strong>Macro avg</strong></td><td>0.74</td><td>0.75</td><td>0.74</td><td>100</td></tr><tr><td><strong>Weighted avg</strong></td><td>0.76</td><td>0.74</td><td>0.74</td><td>100</td></tr></table></div>
+<p><strong>Kappa de Cohen :</strong> <code>0.5952</code></p>
+<h2>Conclusion : lecture critique des résultats et bonnes pratiques</h2>
+<p>Les indicateurs obtenus montrent qu’un <strong>Kappa de Cohen ≃ 0,60</strong> et un <strong>F1 macro = 0,74</strong> placent notre pipeline « zero‑shot + prompt unique » dans la zone d’accord <strong>modéré</strong> (Landis &amp; Koch, 1977). Autrement dit, le modèle surpasse nettement le hasard tout en restant perfectible : environ <strong>un quart des tweets</strong> sont encore mal classés. Cette performance est comparable à ce que l’on observe dans la littérature pour des tâches de complexité moyenne, mais elle reste inférieure aux scores (&gt; 0,90) rapportés pour des classifications plus simples (p. ex. étiquetage partisan), où le signal lexical semble plus explicite.</p>
+<p>Sur le plan opérationnel, <strong>100 tweets annotés en ≈ 30 s</strong> contre <strong>10 – 15 min</strong> en annotation manuelle démontrent un gain de productivité, au prix d’un <strong>surcoût de ≈ 1,62 USD</strong> (tarification GPT‑4, section 2). Dans une étude à grande échelle, ce coût devient non‑négligeable ; il doit donc être mis en balance avec :</p>
+<ul><li>le temps économisé pour l’équipe de recherche,</li><li>la précision additionnelle éventuellement obtenue via un raffinage du prompt ou un <em>few‑shot</em>,</li><li>la possibilité de <strong>renforcer la validité</strong> au moyen d’une double annotation (LLM + humain) et d’un arbitrage des désaccords.</li></ul>
+<p><strong>Recommandations pour réplication et amélioration</strong></p>
+<ul><li>Fixer toutes les hyper‑paramètres (modèle, température, top‑p) et versionner le prompt afin d’assurer la reproductibilité.</li><li>Tester la robustesse sur au moins <strong>trois jeux de données</strong> distincts (ou bootstraps) et rapporter l’intervalle de confiance du Kappa (± 2 σ).</li><li>Envisager un <strong>prompt few‑shot</strong> (3 – 5 exemples) ou un <strong>adapter fine‑tuning</strong> si la tâche se révèle plus nuancée que prévu.</li></ul>
+<p>En résumé, l’annotation zero‑shot via API constitue un <strong>levier méthodologique efficace</strong> pour les sciences sociales. Néanmoins, son adoption doit rester <strong>informée par une évaluation empirique rigoureuse</strong>, le contrôle des biais et une analyse coût‑bénéfice (surtout lorsque le jeu de donnée est énorme).</p>
+<h2>Bibliographie</h2>
+<p>1. <strong>Korinek, A.</strong> (2023). <em>Generative AI for Economic Research: Use Cases and Implications for Economists.</em>    _Journal of Economic Literature, 61_(4), 1281‑1317. &lt;https://doi.org/10.1257/jel.20231736&gt; :contentReference[oaicite:0]{index=0}</p>
+<p>2. <strong>Do, S., Ollion, É., &amp; Shen, R.</strong> (2024). <em>The Augmented Social Scientist: Using Sequential Transfer Learning to Annotate Millions of Texts with Human‑Level Accuracy.</em>    _Sociological Methods &amp; Research, 53_(3), 1167‑1200. &lt;https://doi.org/10.1177/00491241221134526&gt; :contentReference[oaicite:1]{index=1}</p>
+<p>3. <strong>Le Mens, G., &amp; Gallego, A.</strong> (2024). <em>Positioning Political Texts with Large Language Models by Asking and Averaging.</em>    _Political Analysis_, 1‑9. &lt;https://doi.org/10.1017/pan.2024.29&gt; :contentReference[oaicite:2]{index=2}</p>
+<p>4. <strong>Gilardi, F., Alizadeh, M., &amp; Kubli, M.</strong> (2023). <em>ChatGPT Outperforms Crowd Workers for Text‑Annotation Tasks.</em>    _Proceedings of the National Academy of Sciences, 120_(30), e2305016120. &lt;https://doi.org/10.1073/pnas.2305016120&gt; :contentReference[oaicite:3]{index=3}</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <p>Si Hao Li · PhD candidate in Economics · Telecom Paris (CREST)</p>
+    <p><a href="mailto:si.li@ip-paris.fr">si.li@ip-paris.fr</a> · <a href="https://scholar.google.com/citations?user=q-OuuE4AAAAJ&hl=fr">Google Scholar</a> · <a href="https://github.com/sihao-li">GitHub</a></p>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

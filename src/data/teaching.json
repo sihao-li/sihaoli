@@ -1,0 +1,44 @@
+[
+  {
+    "period": "2026-2027",
+    "institution": "Université Paris Cité",
+    "course": "Microéconomie I",
+    "level": "Licence 1 (BA1)",
+    "status": "Current"
+  },
+  {
+    "period": "Past",
+    "institution": "Université Paris 1 Panthéon-Sorbonne",
+    "course": "Histoire de la pensée économique",
+    "level": "Licence 3 (BA3)",
+    "status": "Past"
+  },
+  {
+    "period": "Past",
+    "institution": "Université Paris 1 Panthéon-Sorbonne",
+    "course": "Théories économiques comparées",
+    "level": "Licence 2 (BA2)",
+    "status": "Past"
+  },
+  {
+    "period": "Past",
+    "institution": "Université Paris 1 Panthéon-Sorbonne",
+    "course": "Macroéconomie",
+    "level": "Licence 1 (BA1)",
+    "status": "Past"
+  },
+  {
+    "period": "Past",
+    "institution": "IONIS Group",
+    "course": "Industrial Organization",
+    "level": "Master 1 (MiM1)",
+    "status": "Past"
+  },
+  {
+    "period": "Past",
+    "institution": "IONIS Group",
+    "course": "Economics & Sociology of Cultural Industries",
+    "level": "Master 1 (MiM1)",
+    "status": "Past"
+  }
+]

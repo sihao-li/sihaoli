@@ -1,0 +1,63 @@
+[
+  {
+    "institution": "RITM Paris-Saclay",
+    "role": "TODO: add role from CV or source material",
+    "location": "Paris-Saclay, FR",
+    "period": "TODO",
+    "theme": "TODO",
+    "details": ["Requested in the rebuild brief but not found in the current Hugo content."],
+    "photos": []
+  },
+  {
+    "institution": "LIDAM/CORE (UCLouvain)",
+    "role": "Research Assistant",
+    "location": "Louvain-la-Neuve, BE",
+    "period": "Nov 2024 - Feb 2025",
+    "supervisor": "Paul Belleflamme",
+    "theme": "Industrial Organization & Digital Economics",
+    "details": [
+      "Literature review & applied econometric analyses for competition policy",
+      "Coordinated final report for the PROSEco project"
+    ],
+    "links": [{"label":"PROSEco project","url":"https://www.sharingplatforms.com/about"}],
+    "photos": ["/public/images/positions/lln-960.jpg", "/public/images/positions/lln2-960.jpg", "/public/images/positions/lln3-960.jpg"]
+  },
+  {
+    "institution": "CREST (X/ENSAE)",
+    "role": "Research Assistant",
+    "location": "Palaiseau, FR",
+    "period": "Sept 2023 - Jun 2024",
+    "supervisor": "Samuel Coavoux",
+    "theme": "Text as Data & Computational Social Science",
+    "details": [
+      "Developed & tested NLP methods for social science",
+      "Part of the Rethinking Culture project funded by H! Paris"
+    ],
+    "photos": ["/public/images/positions/crest-960.jpg"]
+  },
+  {
+    "institution": "Labex ICCA (USPN/USN)",
+    "role": "Research Assistant",
+    "location": "Paris, FR",
+    "period": "May 2023 - Jul 2024",
+    "supervisor": "Fabrice Rochelandet & François Moreau",
+    "theme": "Contingent valuation of cultural third places",
+    "details": [
+      "Collected qualitative field data across Paris venues",
+      "Designed survey instruments for economic valuation"
+    ],
+    "photos": ["/public/images/positions/icca-960.jpg"]
+  },
+  {
+    "institution": "Lycée Suger",
+    "role": "Educational Assistant",
+    "location": "Saint-Denis, FR",
+    "period": "Jan 2023 - May 2023",
+    "theme": "Higher-education guidance",
+    "details": [
+      "Guidance workshops for final-year students in Economics & Social Sciences",
+      "Organized school visits to introduce higher-education paths for under-represented youth"
+    ],
+    "photos": ["/public/images/positions/suger-960.jpg"]
+  }
+]
