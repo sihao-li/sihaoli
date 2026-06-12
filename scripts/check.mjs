@@ -66,7 +66,7 @@ if (!publicationsPage.includes("Lukasz Grzybowski, Marc Bourreau, Si Hao Li")) {
   throw new Error("Mobile Money authors are not in the requested order.");
 }
 
-if (conferencePage.includes("Currently working on") || !conferencePage.includes("Research agenda") || !conferencePage.includes("EARIE, August 2026")) {
+if (conferencePage.includes("Currently working on") || !conferencePage.includes("Research agenda") || !conferencePage.includes("EARIE, Mannheim, August 2026")) {
   throw new Error("Conference focus copy was not updated.");
 }
 

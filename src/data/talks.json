@@ -1,6 +1,48 @@
 [
   {
     "year": "2026",
+    "dateLabel": "June 2026",
+    "title": "AFREN Digital Economics Conference - 3EN#12",
+    "location": "Nice, France",
+    "city": "Nice",
+    "country": "France",
+    "lat": 43.7102,
+    "lng": 7.262,
+    "url": "https://elmi.univ-cotedazur.eu/conference-3en12",
+    "eventType": "Conference",
+    "paperPresented": "",
+    "type": "conference"
+  },
+  {
+    "year": "2026",
+    "dateLabel": "July 2026",
+    "title": "CRESSE Conference on Competition Policy and Regulation",
+    "location": "Kos, Greece",
+    "city": "Kos",
+    "country": "Greece",
+    "lat": 36.8915,
+    "lng": 27.2877,
+    "url": "https://www.cresse.info/conference/",
+    "eventType": "Conference",
+    "paperPresented": "",
+    "type": "conference"
+  },
+  {
+    "year": "2026",
+    "dateLabel": "August 2026",
+    "title": "53rd Annual Conference of EARIE",
+    "location": "Mannheim, Germany",
+    "city": "Mannheim",
+    "country": "Germany",
+    "lat": 49.4875,
+    "lng": 8.466,
+    "url": "https://earie.org/intro-earie-2026/",
+    "eventType": "Conference",
+    "paperPresented": "",
+    "type": "conference"
+  },
+  {
+    "year": "2026",
     "dateLabel": "2026",
     "title": "8th Geography of Innovation Conference at Corvinus University of Budapest",
     "location": "Budapest, Hungary",
