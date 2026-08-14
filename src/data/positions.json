@@ -1,18 +1,19 @@
 [
   {
     "institution": "RITM Paris-Saclay",
-    "role": "TODO: add role from CV or source material",
+    "role": "Research Assistant",
     "location": "Paris-Saclay, FR",
-    "period": "TODO",
-    "theme": "TODO",
-    "details": ["Requested in the rebuild brief but not found in the current Hugo content."],
+    "period": "2025",
+    "supervisor": "Anne Plunket & Felipe Starosta de Waldemar",
+    "theme": "Economics of Innovation",
+    "details": ["Research Assistant at Paris-Saclay University."],
     "photos": []
   },
   {
     "institution": "LIDAM/CORE (UCLouvain)",
     "role": "Research Assistant",
     "location": "Louvain-la-Neuve, BE",
-    "period": "Nov 2024 - Feb 2025",
+    "period": "2024-2025",
     "supervisor": "Paul Belleflamme",
     "theme": "Industrial Organization & Digital Economics",
     "details": [
@@ -26,7 +27,7 @@
     "institution": "CREST (X/ENSAE)",
     "role": "Research Assistant",
     "location": "Palaiseau, FR",
-    "period": "Sept 2023 - Jun 2024",
+    "period": "2023-2024",
     "supervisor": "Samuel Coavoux",
     "theme": "Text as Data & Computational Social Science",
     "details": [

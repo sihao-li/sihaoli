@@ -62,7 +62,7 @@ if (!publicationsPage.includes("Published in Venture Capital (2026)") || !public
   throw new Error("Venture Capital publication metadata/link is missing.");
 }
 
-if (!publicationsPage.includes("Lukasz Grzybowski, Marc Bourreau, Si Hao Li")) {
+if (!publicationsPage.includes("Marc Bourreau, Lukasz Grzybowski, Si Hao Li")) {
   throw new Error("Mobile Money authors are not in the requested order.");
 }
 
@@ -74,7 +74,7 @@ if (conferencePage.includes("Fast Estimation of BLP Demand")) {
   throw new Error("Conference selected work still includes Fast BLP.");
 }
 
-if (!conferencePage.includes("Mobile Money, Interoperability and Competition") || !conferencePage.includes("Second-Degree Price Discrimination") || !conferencePage.includes("Co-invention and knowledge transfer")) {
+if (!conferencePage.includes("The Impact of Mobile Money and Interoperability Regulation") || !conferencePage.includes("When Keys Travel but Accounts Don&#039;t") || !conferencePage.includes("Co-invention and knowledge transfer")) {
   throw new Error("Conference selected work does not match the requested papers.");
 }
 

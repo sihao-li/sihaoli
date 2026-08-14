@@ -552,7 +552,7 @@ function mapPanelContent(item = {}) {
 function talkItem(talk) {
   return `<article class="compact-item">
     <time>${esc(talk.year)}</time>
-    <p><a href="${talk.url}">${esc(talk.title)}</a><br><span>${esc(talk.location)}</span></p>
+    <p>${talk.url ? `<a href="${talk.url}">${esc(talk.title)}</a>` : esc(talk.title)}<br><span>${esc(talk.location)}</span></p>
   </article>`;
 }
 

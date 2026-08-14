@@ -1,6 +1,45 @@
 [
   {
     "year": "2026",
+    "dateLabel": "2026",
+    "title": "CREST PhD Workshop",
+    "location": "Paris, France",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "eventType": "PhD Workshop",
+    "paperPresented": "",
+    "type": "workshop"
+  },
+  {
+    "year": "2026",
+    "dateLabel": "2026",
+    "title": "10th Doctoral Workshop on the Economics of Digitization",
+    "location": "Paris, France",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "eventType": "Doctoral Workshop",
+    "paperPresented": "",
+    "type": "workshop"
+  },
+  {
+    "year": "2026",
+    "dateLabel": "2026",
+    "title": "Paris Young Economists Seminar on Digital Economics",
+    "location": "Paris, France",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "eventType": "Seminar",
+    "paperPresented": "",
+    "type": "seminar"
+  },
+  {
+    "year": "2026",
     "dateLabel": "June 2026",
     "title": "AFREN Digital Economics Conference - 3EN#12",
     "location": "Nice, France",
@@ -30,7 +69,7 @@
   {
     "year": "2026",
     "dateLabel": "August 2026",
-    "title": "53rd Annual Conference of EARIE",
+    "title": "EARIE Summer School",
     "location": "Mannheim, Germany",
     "city": "Mannheim",
     "country": "Germany",
@@ -52,7 +91,7 @@
     "lng": 19.0402,
     "url": "https://www.geoinno2026.com/",
     "eventType": "Conference",
-    "paperPresented": "Co-invention and knowledge transfer in science-industry collaboration: Evidence on Recombinant Novelty",
+    "paperPresented": "",
     "type": "conference"
   },
   {
